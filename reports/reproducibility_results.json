@@ -1,0 +1,263 @@
+{
+  "status": "passed",
+  "verified_at_utc": "2026-09-22T09:50:38.416070+00:00",
+  "method": "New Python virtual environment installed from cached distributions; fresh output directory; original workbook downloaded from UCI and verified; full pipeline and the combined notebook executed.",
+  "dependency_install": "uv pip install --offline -r requirements.txt into a new environment; uv pip check passed for 103 packages",
+  "source_download": "Official UCI network download succeeded; pinned SHA-256 matched",
+  "limitations": [
+    "Windows / Python 3.12.14 checked; other operating systems not executed",
+    "Direct dependencies pinned; transitive dependencies not locked",
+    "Tests cannot prove absence of every possible defect"
+  ],
+  "regression_suites": 6,
+  "artifacts": [
+    {
+      "file": "data/processed/basket_value_product_comparison.csv",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "b1ec757c98ee85aaa6e9379049f2790cd1173c7cb742aa0fcf76755d974dc587"
+    },
+    {
+      "file": "data/processed/cohort_retention.csv",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "48d398bba8b3e6ffb3b1fb29ad6d896a5c530a52ed62e3e5214f9b6a77e881f0"
+    },
+    {
+      "file": "data/processed/cohort_retention_matrix.csv",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "cce121f6c925cc450f0ef7aadfc679771be59111c8ba0a57da3a08c9fc1a2eb6"
+    },
+    {
+      "file": "data/processed/cohort_retention_pooled.csv",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "2a8a7676926c4c23c11d91ed093f73ca512d281c9f96831015ace28f7635d34e"
+    },
+    {
+      "file": "data/processed/comparison_by_cohort.csv",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "2acfb4a278c632875d65b3af5b841c55a2dbec52dae2b265eba239c39f9fe0d8"
+    },
+    {
+      "file": "data/processed/customer_comparisons.csv",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "6f93d72be3e95ec4988c55184db937966102fef44d748b792dc29789d302582b"
+    },
+    {
+      "file": "data/processed/monthly_kpis.csv",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "ed7ddeda646025f2016c4158fba4f4a2840499d2a45b88c348087d025ed9d248"
+    },
+    {
+      "file": "data/processed/reactivation_thresholds.csv",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "93a670f6a914ed961e898a98df241dcfc53c3bdd2b241da44f30ff7943d5f751"
+    },
+    {
+      "file": "data/processed/repeat_purchase_summary.csv",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "15a7b3eddb0203aaa8b570b2f86a3d976a63ae8316d678fcf2501095bdb845b8"
+    },
+    {
+      "file": "data/processed/rfm_segments.csv",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "384ea288a9727a88de4c7528a598bb998c557c766ca0d9668503dcf1b6acff2a"
+    },
+    {
+      "file": "data/processed/rfm_sensitivity.csv",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "a5adc1b64cb86227bdf62f55ef8f6875a500c5ce847f65a5911b7d583542d8f0"
+    },
+    {
+      "file": "images/cohort_retention_heatmap.png",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "1cad074af31375798b093b8c21081ebbadf13158fc627cbadb9ced57ce33ccaf"
+    },
+    {
+      "file": "images/customer_group_comparisons.png",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "b3c6fda0318e38b08eab3efbe987ef19ba036f727f165e74730701c5ae4776db"
+    },
+    {
+      "file": "images/customer_value_concentration.png",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "c78ea7fb9a247767dbefb100c07fe1c457598419490214b17ce4f3368e25b8d8"
+    },
+    {
+      "file": "images/monthly_kpis.png",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "ab0b242a14c5289c83620f4d698ac739b2d7e6f6e039423f9a86fbde39e03740"
+    },
+    {
+      "file": "images/repeat_purchase_windows.png",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "89609cc5d9800e004dd4b24f51906b6f741fe79783154905efeb4c44a41d332c"
+    },
+    {
+      "file": "images/rfm_segments.png",
+      "comparison": "byte equality",
+      "passed": true,
+      "sha256": "1ccf630f0466d5e0a121ca1525a9f9a2722c03dddff35da4bbd9bb37045af716"
+    }
+  ],
+  "tables": [
+    {
+      "table": "cohort_retention",
+      "object_type": "BASE TABLE",
+      "rows": 576,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "cohort_retention_pooled",
+      "object_type": "BASE TABLE",
+      "rows": 24,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "customer_comparison_population",
+      "object_type": "BASE TABLE",
+      "rows": 3529,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "customer_features",
+      "object_type": "BASE TABLE",
+      "rows": 5821,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "customer_month_activity",
+      "object_type": "BASE TABLE",
+      "rows": 24850,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "customer_purchase_history",
+      "object_type": "BASE TABLE",
+      "rows": 35751,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "customer_repeat_windows",
+      "object_type": "BASE TABLE",
+      "rows": 17463,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "customer_value",
+      "object_type": "BASE TABLE",
+      "rows": 5821,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "fact_order_lines",
+      "object_type": "BASE TABLE",
+      "rows": 972818,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "fact_orders",
+      "object_type": "BASE TABLE",
+      "rows": 38615,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "monthly_kpis",
+      "object_type": "BASE TABLE",
+      "rows": 24,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "product_roles",
+      "object_type": "BASE TABLE",
+      "rows": 5131,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "raw_order_lines",
+      "object_type": "BASE TABLE",
+      "rows": 1067371,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "repeat_purchase_summary",
+      "object_type": "BASE TABLE",
+      "rows": 6,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "rfm_exclude_extreme",
+      "object_type": "BASE TABLE",
+      "rows": 5821,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "rfm_keep_duplicates",
+      "object_type": "BASE TABLE",
+      "rows": 5821,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "rfm_snapshot",
+      "object_type": "BASE TABLE",
+      "rows": 5821,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "sensitivity_order_lines_keep_duplicates",
+      "object_type": "VIEW",
+      "rows": 984236,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "sensitivity_orders_keep_duplicates",
+      "object_type": "VIEW",
+      "rows": 38615,
+      "exact_bidirectional_multiset_equality": true
+    },
+    {
+      "table": "stg_order_lines",
+      "object_type": "BASE TABLE",
+      "rows": 1067371,
+      "exact_bidirectional_multiset_equality": true
+    }
+  ],
+  "notebooks": [
+    {
+      "file": "ecommerce_retention_analysis.ipynb",
+      "executed_code_cells": 9,
+      "passed": true
+    },
+    {
+      "file": "ecommerce_retention_analysis.ipynb",
+      "executed_code_cells": 4,
+      "passed": true
+    },
+    {
+      "file": "ecommerce_retention_analysis.ipynb",
+      "executed_code_cells": 4,
+      "passed": true
+    }
+  ],
+  "documentation_links": {
+    "checked": 142,
+    "anchors_checked": 5,
+    "broken": 0
+  },
+  "dashboard_check": "JavaScript fixture passed; real browser KPI/cohort/geography/product selectors and layout inspected; six PNGs visually reviewed",
+  "packaging_note": "Historical analytical verification. See final_delivery_validation.json for the current single-notebook package."
+}

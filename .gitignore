@@ -1,0 +1,38 @@
+# Downloaded datasets stay local; source instructions and metadata are tracked.
+/data/raw/*.xlsx
+/data/raw/*.zip
+/data/processed/*
+!/data/processed/README.md
+!/data/processed/basket_value_product_comparison.csv
+!/data/processed/cohort_retention.csv
+!/data/processed/cohort_retention_matrix.csv
+!/data/processed/cohort_retention_pooled.csv
+!/data/processed/comparison_by_cohort.csv
+!/data/processed/customer_comparisons.csv
+!/data/processed/monthly_kpis.csv
+!/data/processed/reactivation_thresholds.csv
+!/data/processed/repeat_purchase_summary.csv
+!/data/processed/rfm_segments.csv
+!/data/processed/rfm_sensitivity.csv
+# Temporary downloads and local database state
+/data/raw/uci-download-*/
+*.duckdb
+*.duckdb.wal
+*.duckdb.tmp/
+# Local runtime, notebook, and editor artifacts
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.pytest_cache/
+.coverage
+.jupyter/
+.DS_Store
+Thumbs.db
+~$*

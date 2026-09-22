@@ -1,0 +1,70 @@
+{
+  "started_at_utc": "2026-09-22T14:58:59.652416+00:00",
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "duckdb": "1.4.5",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "openpyxl": "3.1.5",
+    "matplotlib": "3.10.8",
+    "jupyterlab": "4.4.10",
+    "ipykernel": "6.30.1"
+  },
+  "notebooks_requested": true,
+  "steps": [
+    {
+      "name": "download_dataset.py",
+      "status": "passed",
+      "seconds": 0.14
+    },
+    {
+      "name": "profile_dataset.py",
+      "status": "passed",
+      "seconds": 69.12
+    },
+    {
+      "name": "audit_data.py",
+      "status": "passed",
+      "seconds": 96.55
+    },
+    {
+      "name": "clean_data.py",
+      "status": "passed",
+      "seconds": 44.52
+    },
+    {
+      "name": "monthly_kpis.py",
+      "status": "passed",
+      "seconds": 2.97
+    },
+    {
+      "name": "retention_analysis.py",
+      "status": "passed",
+      "seconds": 2.23
+    },
+    {
+      "name": "customer_analysis.py",
+      "status": "passed",
+      "seconds": 2.94
+    },
+    {
+      "name": "visualize_analysis.py",
+      "status": "passed",
+      "seconds": 2.69
+    },
+    {
+      "name": "build_dashboard.py",
+      "status": "passed",
+      "seconds": 0.17
+    },
+    {
+      "name": "ecommerce_retention_analysis.ipynb",
+      "status": "passed",
+      "seconds": 4.03
+    }
+  ],
+  "status": "passed",
+  "scope": "Computed outputs are regenerated; narrative reports require editorial review when inputs change.",
+  "finished_at_utc": "2026-09-22T15:02:47.874142+00:00"
+}

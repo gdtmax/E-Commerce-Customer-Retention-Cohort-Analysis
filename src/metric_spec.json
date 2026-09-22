@@ -1,0 +1,151 @@
+{
+  "specification_version": "1.1",
+  "specification_date": "2026-09-22",
+  "status": "All 14 project steps implemented; metric contract 1.1 retained",
+  "authoritative_document": "data_dictionary.md",
+  "source_manifest": "data/raw/source_manifest.json",
+  "currency": "GBP",
+  "timestamp_convention": "Source wall-clock timestamp, no timezone conversion",
+  "history_start_inclusive": "2009-12-01T00:00:00",
+  "analysis_cutoff_exclusive": "2011-12-01T00:00:00",
+  "primary_cohort_start_inclusive": "2010-03-01T00:00:00",
+  "last_complete_month": "2011-11",
+  "rfm": {
+    "snapshot_date": "2011-12-01",
+    "measurement_start_inclusive": "2010-12-01T00:00:00",
+    "recency": "Calendar days from last eligible purchase date to snapshot date",
+    "frequency": "Distinct eligible invoices in the trailing 12 months",
+    "monetary": "Eligible gross merchandise sales in the trailing 12 months",
+    "scorable_condition": "frequency_12m >= 1",
+    "ascending_score_formula": "1 + min(4, floor(5 * (2*count_less + count_equal) / (2*N)))",
+    "recency_score_formula": "6 - ascending_score(recency_days)",
+    "frequency_and_monetary_score_formula": "ascending_score(value)",
+    "dormant_score": null,
+    "segments_first_match": [
+      {
+        "label": "Dormant beyond 12 months",
+        "condition": "frequency_12m == 0"
+      },
+      {
+        "label": "At Risk Repeat",
+        "condition": "frequency_12m >= 2 and recency_days > 90"
+      },
+      {
+        "label": "Inactive Single-Purchase",
+        "condition": "frequency_12m == 1 and recency_days > 90"
+      },
+      {
+        "label": "Champions",
+        "condition": "frequency_12m >= 2 and recency_days <= 90 and R_score >= 4 and F_score >= 4 and M_score >= 4"
+      },
+      {
+        "label": "Loyal",
+        "condition": "frequency_12m >= 2 and recency_days <= 90"
+      },
+      {
+        "label": "Promising New",
+        "condition": "frequency_12m == 1 and recency_days <= 90 and first_order_timestamp >= T - 30 days"
+      },
+      {
+        "label": "Recent Occasional",
+        "condition": "remaining scorable customers"
+      }
+    ]
+  },
+  "repeat_purchase": {
+    "primary_windows_days": [
+      30,
+      60,
+      90
+    ],
+    "supplementary_windows_days": [
+      180
+    ],
+    "eligibility": "first_order_timestamp + D days < analysis_cutoff_exclusive",
+    "repeat_event": "second distinct eligible invoice timestamp <= first_order_timestamp + D days",
+    "same_timestamp_distinct_invoices_count": true,
+    "common_population_window_days": 90,
+    "conditional_time_to_second_window_days": 90
+  },
+  "cohort_retention": {
+    "type": "Calendar-month purchasing retention",
+    "observable_cell": "target_month_end_exclusive <= analysis_cutoff_exclusive",
+    "unobserved_count_and_rate": null,
+    "observed_no_purchase_count_and_rate": 0,
+    "pooled_rate": "sum(retained_customers) / sum(cohort_size) over mature in-scope cohorts"
+  },
+  "duplicate_handling": {
+    "cross_sheet_unit": "Invoice payload multiset of eight normalized source fields",
+    "matching_invoice_preferred_sheet": "Year 2010-2011",
+    "conflicting_invoice_action": "Quarantine pending documented resolution",
+    "within_sheet_primary": "Retain earliest of identical eight-field rows in retained invoice version",
+    "within_sheet_sensitivity": "Retain repeated within-sheet rows and quantify changes"
+  },
+  "purchase_scope": {
+    "eligible_invoice_id_pattern": "^[0-9]+$",
+    "quantity": "Positive integral value",
+    "unit_price": "Positive exact decimal",
+    "product_role": "Classified merchandise only; unresolved special codes excluded with quantified exposure",
+    "invoice_prefix_excluded": "C",
+    "customer_required_for_sales": false,
+    "customer_required_for_retention": true,
+    "refund_linkage": "Not assumed; historical purchase events are not retroactively removed",
+    "money_label": "Gross merchandise sales (GBP)",
+    "money_decimal_places_max": 6,
+    "display_money_decimal_places": 2,
+    "display_rounding": "Half up",
+    "price_normalization": {
+      "rule": "Half-up to six decimal places only for finite prices with absolute deviation at most the stated tolerance; preserve raw text and correction flag",
+      "maximum_absolute_deviation_gbp": "0.000000001",
+      "evidence": "Step 5: 112879 serialized prices; maximum deviation 0.000000000003 GBP",
+      "other_precision_failures": "Quarantine"
+    }
+  },
+  "comparison": {
+    "first_order_value_band_edges_gbp": [
+      0,
+      50,
+      100,
+      250
+    ],
+    "value_bands": "Positive values; lower bound inclusive except zero; upper bound exclusive; final band unbounded",
+    "first_order_distinct_product_bands": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        6,
+        null
+      ]
+    ],
+    "headline_minimum_eligible_customers": 100,
+    "shared_cohort_minimum_customers_per_group_month": 20,
+    "confidence_interval": "95% Wilson interval for unadjusted binomial rates only",
+    "confidence_z": 1.959963984540054
+  },
+  "reactivation": {
+    "minimum_historical_orders": 2,
+    "primary_recency_threshold_days_exclusive": 90,
+    "sensitivity_thresholds_days_exclusive": [
+      60,
+      90,
+      120
+    ]
+  },
+  "revenue_concentration": {
+    "customer_fraction": 0.1,
+    "selected_count": "ceil(0.1 * identified_historical_customer_count)",
+    "ranking": "historical_sales_gbp descending, then customer_id ascending ordinal text",
+    "denominator": "Gross merchandise sales of all identified historical customers"
+  },
+  "zero_denominator_result": null,
+  "order_sequence_tie_break": "invoice_id ascending ordinal text after order_timestamp",
+  "documented_limitations": [
+    "Unresolved product exposure, unknown customer identity, observational comparisons and historical-source limitations must accompany final conclusions"
+  ]
+}

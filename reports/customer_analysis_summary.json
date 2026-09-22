@@ -1,0 +1,546 @@
+{
+  "steps": [
+    11,
+    12
+  ],
+  "contract_version": "1.1",
+  "parameters": {
+    "history_start": "2009-12-01T00:00:00",
+    "cutoff": "2011-12-01T00:00:00",
+    "rfm_start": "2010-12-01T00:00:00",
+    "cohort_start": "2010-03-01T00:00:00"
+  },
+  "fact_orders_sha256": "dc3ff679cde467744f5836ea08d466afdb3ebab3b993255fab66d3a0c4c28a8c",
+  "sql_sha256": {
+    "05_rfm_segments.sql": "70bf7678ff65d9f69399db96e5f7399e9f877ec1f317ab710ea4a6128b980240",
+    "06_customer_comparisons.sql": "9128cae450e96183793af1bcf99b3e10c8dc52adcc6f5b5be240f505a3c7a710"
+  },
+  "validation": {
+    "all_primary_and_sensitivity_rfm_features_match_python": true,
+    "tie_scores_and_segments_match_python": true,
+    "trailing_year_money_reconciles": true,
+    "historical_value_and_rank_reconcile": true,
+    "every_90_day_value_matches_invoices": true,
+    "first_order_features_frozen": true,
+    "repeat_outcomes_match_invoices": true,
+    "comparison_populations_exhaustive": true,
+    "parquet_values_match_database": true
+  },
+  "table_counts": {
+    "rfm_snapshot": 5821,
+    "rfm_keep_duplicates": 5821,
+    "rfm_exclude_extreme": 5821,
+    "customer_value": 5821,
+    "customer_comparison_population": 3529
+  },
+  "concentration": {
+    "customers": 5821,
+    "top_customer_count": 583,
+    "identified_historical_sales_gbp": "16518355.987000",
+    "top_customer_sales_gbp": "10499700.028000",
+    "top_customer_sales_share": 0.6356383187445105
+  },
+  "rfm_segments": [
+    {
+      "segment": "Dormant beyond 12 months",
+      "customers": 1530,
+      "monetary_12m_gbp": "0.000000",
+      "historical_sales_gbp": "1050619.073000",
+      "median_recency_days": 467.0,
+      "median_frequency_12m": 0.0,
+      "customer_share": 0.26284143617935063,
+      "monetary_share": 0.0
+    },
+    {
+      "segment": "Loyal",
+      "customers": 1193,
+      "monetary_12m_gbp": "1434580.861000",
+      "historical_sales_gbp": "2693506.014000",
+      "median_recency_days": 38.0,
+      "median_frequency_12m": 3.0,
+      "customer_share": 0.2049476035045525,
+      "monetary_share": 0.17484803670116517
+    },
+    {
+      "segment": "Champions",
+      "customers": 957,
+      "monetary_12m_gbp": "5488996.990000",
+      "historical_sales_gbp": "9925264.874000",
+      "median_recency_days": 11.0,
+      "median_frequency_12m": 7.0,
+      "customer_share": 0.16440474145335854,
+      "monetary_share": 0.6690040089417484
+    },
+    {
+      "segment": "Inactive Single-Purchase",
+      "customers": 869,
+      "monetary_12m_gbp": "372912.870000",
+      "historical_sales_gbp": "862439.642000",
+      "median_recency_days": 239.0,
+      "median_frequency_12m": 1.0,
+      "customer_share": 0.14928706407833706,
+      "monetary_share": 0.045450964077860256
+    },
+    {
+      "segment": "At Risk Repeat",
+      "customers": 591,
+      "monetary_12m_gbp": "638470.821000",
+      "historical_sales_gbp": "1423588.073000",
+      "median_recency_days": 161.0,
+      "median_frequency_12m": 2.0,
+      "customer_share": 0.1015289469163374,
+      "monetary_share": 0.07781741174562558
+    },
+    {
+      "segment": "Recent Occasional",
+      "customers": 521,
+      "monetary_12m_gbp": "217899.571000",
+      "historical_sales_gbp": "511069.831000",
+      "median_recency_days": 49.0,
+      "median_frequency_12m": 1.0,
+      "customer_share": 0.08950352173166122,
+      "monetary_share": 0.026557800416226345
+    },
+    {
+      "segment": "Promising New",
+      "customers": 160,
+      "monetary_12m_gbp": "51868.480000",
+      "historical_sales_gbp": "51868.480000",
+      "median_recency_days": 16.5,
+      "median_frequency_12m": 1.0,
+      "customer_share": 0.02748668613640268,
+      "monetary_share": 0.0063217781173742086
+    }
+  ],
+  "reactivation": [
+    {
+      "recency_threshold_days_exclusive": 60,
+      "customers": 2071,
+      "historical_sales_gbp": "3754788.847000"
+    },
+    {
+      "recency_threshold_days_exclusive": 90,
+      "customers": 1728,
+      "historical_sales_gbp": "2917464.326000"
+    },
+    {
+      "recency_threshold_days_exclusive": 120,
+      "customers": 1543,
+      "historical_sales_gbp": "2455693.256000"
+    }
+  ],
+  "sensitivity": [
+    {
+      "scenario": "keep_within_sheet_duplicates",
+      "customers": 5821,
+      "customers_removed": 0,
+      "m_score_changes_common_customers": 36,
+      "segment_changes_common_customers": 4,
+      "monetary_12m_gbp": "8227435.493000",
+      "top_customer_count": 583,
+      "identified_historical_sales_gbp": "16573557.397000",
+      "top_customer_sales_gbp": "10521045.198000",
+      "top_customer_sales_share": 0.6348091086289313
+    },
+    {
+      "scenario": "exclude_invoice_541431",
+      "customers": 5821,
+      "customers_removed": 0,
+      "m_score_changes_common_customers": 3,
+      "segment_changes_common_customers": 1,
+      "monetary_12m_gbp": "8127545.993000",
+      "top_customer_count": 583,
+      "identified_historical_sales_gbp": "16441172.387000",
+      "top_customer_sales_gbp": "10427610.898000",
+      "top_customer_sales_share": 0.6342376718977224
+    }
+  ],
+  "comparison_population": 3529,
+  "basket_value_product_comparison": [
+    {
+      "first_order_value_band": "Under GBP 50",
+      "first_order_product_band": "1 product",
+      "eligible_customers": 39,
+      "repeat_customers": 7,
+      "repeat_rate_90d": null,
+      "wilson_low": null,
+      "wilson_high": null
+    },
+    {
+      "first_order_value_band": "Under GBP 50",
+      "first_order_product_band": "2-5 products",
+      "eligible_customers": 40,
+      "repeat_customers": 9,
+      "repeat_rate_90d": null,
+      "wilson_low": null,
+      "wilson_high": null
+    },
+    {
+      "first_order_value_band": "Under GBP 50",
+      "first_order_product_band": "6+ products",
+      "eligible_customers": 11,
+      "repeat_customers": 7,
+      "repeat_rate_90d": null,
+      "wilson_low": null,
+      "wilson_high": null
+    },
+    {
+      "first_order_value_band": "GBP 50-<100",
+      "first_order_product_band": "1 product",
+      "eligible_customers": 32,
+      "repeat_customers": 5,
+      "repeat_rate_90d": null,
+      "wilson_low": null,
+      "wilson_high": null
+    },
+    {
+      "first_order_value_band": "GBP 50-<100",
+      "first_order_product_band": "2-5 products",
+      "eligible_customers": 108,
+      "repeat_customers": 36,
+      "repeat_rate_90d": 0.3333333333333333,
+      "wilson_low": 0.25150495389408567,
+      "wilson_high": 0.42661083268809985
+    },
+    {
+      "first_order_value_band": "GBP 50-<100",
+      "first_order_product_band": "6+ products",
+      "eligible_customers": 65,
+      "repeat_customers": 24,
+      "repeat_rate_90d": null,
+      "wilson_low": null,
+      "wilson_high": null
+    },
+    {
+      "first_order_value_band": "GBP 100-<250",
+      "first_order_product_band": "1 product",
+      "eligible_customers": 33,
+      "repeat_customers": 6,
+      "repeat_rate_90d": null,
+      "wilson_low": null,
+      "wilson_high": null
+    },
+    {
+      "first_order_value_band": "GBP 100-<250",
+      "first_order_product_band": "2-5 products",
+      "eligible_customers": 110,
+      "repeat_customers": 39,
+      "repeat_rate_90d": 0.35454545454545455,
+      "wilson_low": 0.27144143085862793,
+      "wilson_high": 0.4474658957735652
+    },
+    {
+      "first_order_value_band": "GBP 100-<250",
+      "first_order_product_band": "6+ products",
+      "eligible_customers": 1138,
+      "repeat_customers": 402,
+      "repeat_rate_90d": 0.3532513181019332,
+      "wilson_low": 0.3260166900775718,
+      "wilson_high": 0.38147334943723205
+    },
+    {
+      "first_order_value_band": "GBP 250+",
+      "first_order_product_band": "1 product",
+      "eligible_customers": 33,
+      "repeat_customers": 7,
+      "repeat_rate_90d": null,
+      "wilson_low": null,
+      "wilson_high": null
+    },
+    {
+      "first_order_value_band": "GBP 250+",
+      "first_order_product_band": "2-5 products",
+      "eligible_customers": 84,
+      "repeat_customers": 40,
+      "repeat_rate_90d": null,
+      "wilson_low": null,
+      "wilson_high": null
+    },
+    {
+      "first_order_value_band": "GBP 250+",
+      "first_order_product_band": "6+ products",
+      "eligible_customers": 1836,
+      "repeat_customers": 870,
+      "repeat_rate_90d": 0.4738562091503268,
+      "wilson_low": 0.45109505096583935,
+      "wilson_high": 0.4967265401067228
+    }
+  ],
+  "comparisons": [
+    {
+      "feature": "first_order_value_band",
+      "group": "Under GBP 50",
+      "eligible_customers": 90,
+      "repeat_customers": 23,
+      "publishable": false,
+      "repeat_rate_90d": null,
+      "wilson_low": null,
+      "wilson_high": null,
+      "mean_observed_sales_90d_gbp": null,
+      "median_observed_sales_90d_gbp": null
+    },
+    {
+      "feature": "first_order_value_band",
+      "group": "GBP 50-<100",
+      "eligible_customers": 205,
+      "repeat_customers": 65,
+      "publishable": true,
+      "repeat_rate_90d": 0.3170731707317073,
+      "wilson_low": 0.25723710030316416,
+      "wilson_high": 0.3836388042058487,
+      "mean_observed_sales_90d_gbp": "161.378683",
+      "median_observed_sales_90d_gbp": "88.700000"
+    },
+    {
+      "feature": "first_order_value_band",
+      "group": "GBP 100-<250",
+      "eligible_customers": 1281,
+      "repeat_customers": 447,
+      "publishable": true,
+      "repeat_rate_90d": 0.34894613583138173,
+      "wilson_low": 0.32333165435428746,
+      "wilson_high": 0.37546386835929924,
+      "mean_observed_sales_90d_gbp": "304.776394",
+      "median_observed_sales_90d_gbp": "204.250000"
+    },
+    {
+      "feature": "first_order_value_band",
+      "group": "GBP 250+",
+      "eligible_customers": 1953,
+      "repeat_customers": 917,
+      "publishable": true,
+      "repeat_rate_90d": 0.46953405017921146,
+      "wilson_low": 0.44748154523076566,
+      "wilson_high": 0.49170617002148753,
+      "mean_observed_sales_90d_gbp": "990.777671",
+      "median_observed_sales_90d_gbp": "610.450000"
+    },
+    {
+      "feature": "first_order_product_band",
+      "group": "1 product",
+      "eligible_customers": 137,
+      "repeat_customers": 25,
+      "publishable": true,
+      "repeat_rate_90d": 0.18248175182481752,
+      "wilson_low": 0.1267685353952011,
+      "wilson_high": 0.255515624904785,
+      "mean_observed_sales_90d_gbp": "607.990073",
+      "median_observed_sales_90d_gbp": "132.000000"
+    },
+    {
+      "feature": "first_order_product_band",
+      "group": "2-5 products",
+      "eligible_customers": 342,
+      "repeat_customers": 124,
+      "publishable": true,
+      "repeat_rate_90d": 0.36257309941520466,
+      "wilson_low": 0.3134098973925976,
+      "wilson_high": 0.4147892597572237,
+      "mean_observed_sales_90d_gbp": "572.497018",
+      "median_observed_sales_90d_gbp": "175.675000"
+    },
+    {
+      "feature": "first_order_product_band",
+      "group": "6+ products",
+      "eligible_customers": 3050,
+      "repeat_customers": 1303,
+      "publishable": true,
+      "repeat_rate_90d": 0.42721311475409834,
+      "wilson_low": 0.4097598272469127,
+      "wilson_high": 0.44484952101589464,
+      "mean_observed_sales_90d_gbp": "698.568224",
+      "median_observed_sales_90d_gbp": "404.375000"
+    },
+    {
+      "feature": "first_order_geography",
+      "group": "United Kingdom",
+      "eligible_customers": 3185,
+      "repeat_customers": 1309,
+      "publishable": true,
+      "repeat_rate_90d": 0.41098901098901097,
+      "wilson_low": 0.3940190257868521,
+      "wilson_high": 0.42817345153696884,
+      "mean_observed_sales_90d_gbp": "652.068472",
+      "median_observed_sales_90d_gbp": "351.900000"
+    },
+    {
+      "feature": "first_order_geography",
+      "group": "Other known country",
+      "eligible_customers": 340,
+      "repeat_customers": 142,
+      "publishable": true,
+      "repeat_rate_90d": 0.4176470588235294,
+      "wilson_low": 0.36643151084953623,
+      "wilson_high": 0.47070273063469753,
+      "mean_observed_sales_90d_gbp": "974.973356",
+      "median_observed_sales_90d_gbp": "580.675000"
+    },
+    {
+      "feature": "first_order_geography",
+      "group": "Unknown",
+      "eligible_customers": 4,
+      "repeat_customers": 1,
+      "publishable": false,
+      "repeat_rate_90d": null,
+      "wilson_low": null,
+      "wilson_high": null,
+      "mean_observed_sales_90d_gbp": null,
+      "median_observed_sales_90d_gbp": null
+    }
+  ],
+  "cohort_standardization": [
+    {
+      "feature": "first_order_value_band",
+      "group": "GBP 50-<100",
+      "shared_months": 3,
+      "shared_eligible_customers": 64,
+      "shared_unadjusted_rate": null,
+      "standardized_rate": null,
+      "cohort_months": [
+        "2010-03-01",
+        "2010-10-01",
+        "2010-11-01"
+      ],
+      "weights": {
+        "2010-03-01": 0.3830357142857143,
+        "2010-10-01": 0.3294642857142857,
+        "2010-11-01": 0.2875
+      },
+      "status": "Suppressed: a shared-cohort group has fewer than 100 customers"
+    },
+    {
+      "feature": "first_order_value_band",
+      "group": "GBP 100-<250",
+      "shared_months": 3,
+      "shared_eligible_customers": 397,
+      "shared_unadjusted_rate": 0.36523929471032746,
+      "standardized_rate": null,
+      "cohort_months": [
+        "2010-03-01",
+        "2010-10-01",
+        "2010-11-01"
+      ],
+      "weights": {
+        "2010-03-01": 0.3830357142857143,
+        "2010-10-01": 0.3294642857142857,
+        "2010-11-01": 0.2875
+      },
+      "status": "Suppressed: a shared-cohort group has fewer than 100 customers"
+    },
+    {
+      "feature": "first_order_value_band",
+      "group": "GBP 250+",
+      "shared_months": 3,
+      "shared_eligible_customers": 659,
+      "shared_unadjusted_rate": 0.4385432473444613,
+      "standardized_rate": null,
+      "cohort_months": [
+        "2010-03-01",
+        "2010-10-01",
+        "2010-11-01"
+      ],
+      "weights": {
+        "2010-03-01": 0.3830357142857143,
+        "2010-10-01": 0.3294642857142857,
+        "2010-11-01": 0.2875
+      },
+      "status": "Suppressed: a shared-cohort group has fewer than 100 customers"
+    },
+    {
+      "feature": "first_order_product_band",
+      "group": "1 product",
+      "shared_months": 0,
+      "shared_eligible_customers": 0,
+      "shared_unadjusted_rate": null,
+      "standardized_rate": null,
+      "cohort_months": [],
+      "weights": {},
+      "status": "Unavailable: no shared months with minimum group counts"
+    },
+    {
+      "feature": "first_order_product_band",
+      "group": "2-5 products",
+      "shared_months": 0,
+      "shared_eligible_customers": 0,
+      "shared_unadjusted_rate": null,
+      "standardized_rate": null,
+      "cohort_months": [],
+      "weights": {},
+      "status": "Unavailable: no shared months with minimum group counts"
+    },
+    {
+      "feature": "first_order_product_band",
+      "group": "6+ products",
+      "shared_months": 0,
+      "shared_eligible_customers": 0,
+      "shared_unadjusted_rate": null,
+      "standardized_rate": null,
+      "cohort_months": [],
+      "weights": {},
+      "status": "Unavailable: no shared months with minimum group counts"
+    },
+    {
+      "feature": "first_order_geography",
+      "group": "United Kingdom",
+      "shared_months": 8,
+      "shared_eligible_customers": 1958,
+      "shared_unadjusted_rate": 0.41726251276813076,
+      "standardized_rate": 0.4177232864942144,
+      "cohort_months": [
+        "2010-03-01",
+        "2010-04-01",
+        "2010-05-01",
+        "2010-06-01",
+        "2010-07-01",
+        "2010-09-01",
+        "2010-10-01",
+        "2011-08-01"
+      ],
+      "weights": {
+        "2010-03-01": 0.20407218880148079,
+        "2010-04-01": 0.13558537714021288,
+        "2010-05-01": 0.11800092549745488,
+        "2010-06-01": 0.12309116149930588,
+        "2010-07-01": 0.08514576584914392,
+        "2010-09-01": 0.1105969458583989,
+        "2010-10-01": 0.17399352151781583,
+        "2011-08-01": 0.04951411383618695
+      },
+      "status": "Available: descriptive common-cohort standardization"
+    },
+    {
+      "feature": "first_order_geography",
+      "group": "Other known country",
+      "shared_months": 8,
+      "shared_eligible_customers": 203,
+      "shared_unadjusted_rate": 0.4088669950738916,
+      "standardized_rate": 0.3982228997089373,
+      "cohort_months": [
+        "2010-03-01",
+        "2010-04-01",
+        "2010-05-01",
+        "2010-06-01",
+        "2010-07-01",
+        "2010-09-01",
+        "2010-10-01",
+        "2011-08-01"
+      ],
+      "weights": {
+        "2010-03-01": 0.20407218880148079,
+        "2010-04-01": 0.13558537714021288,
+        "2010-05-01": 0.11800092549745488,
+        "2010-06-01": 0.12309116149930588,
+        "2010-07-01": 0.08514576584914392,
+        "2010-09-01": 0.1105969458583989,
+        "2010-10-01": 0.17399352151781583,
+        "2011-08-01": 0.04951411383618695
+      },
+      "status": "Available: descriptive common-cohort standardization"
+    }
+  ],
+  "fixed_window_value": {
+    "customers": 3529,
+    "median_sales_90d_gbp": "369.020000",
+    "mean_sales_90d_gbp": "682.834147"
+  }
+}

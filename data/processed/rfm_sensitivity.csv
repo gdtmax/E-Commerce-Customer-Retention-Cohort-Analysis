@@ -1,0 +1,3 @@
+scenario,customers,customers_removed,m_score_changes_common_customers,segment_changes_common_customers,monetary_12m_gbp,top_customer_count,identified_historical_sales_gbp,top_customer_sales_gbp,top_customer_sales_share
+keep_within_sheet_duplicates,5821,0,36,4,8227435.493000,583,16573557.397000,10521045.198000,0.6348091086289313
+exclude_invoice_541431,5821,0,3,1,8127545.993000,583,16441172.387000,10427610.898000,0.6342376718977224

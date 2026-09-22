@@ -1,0 +1,25 @@
+{
+  "step": 7,
+  "contract_version": "1.1",
+  "reporting_months": 24,
+  "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "input_tables_sha256": "61885a0c85b4df1022bacc48b87885fef510b33112f9fb049ff10b98ac5872ea",
+  "sql_sha256": "17708758c57a08561aa7a3a263d98f8054daebd288b855498c2b7b390463e179",
+  "validation": {
+    "calendar_complete": true,
+    "all_monthly_counts_and_money_match_independent_python": true,
+    "all_ratios_and_previous_calendar_month_match": true,
+    "new_plus_returning_equals_active": true,
+    "orders_and_sales_reconcile_to_invoices": true,
+    "new_customers_reconcile_to_distinct_customers": true,
+    "parquet_matches_database": true
+  },
+  "totals": {
+    "orders": 38615,
+    "gross_merchandise_sales_gbp": "18933017.227000",
+    "average_order_value_gbp": "490.302142",
+    "distinct_customers": 5821,
+    "identified_order_share": 0.9258319305969183,
+    "identified_sales_share": 0.8724629460244456
+  }
+}

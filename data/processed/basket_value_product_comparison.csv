@@ -1,0 +1,13 @@
+first_order_value_band,first_order_product_band,eligible_customers,repeat_customers,repeat_rate_90d,wilson_low,wilson_high
+Under GBP 50,1 product,39,7,,,
+Under GBP 50,2-5 products,40,9,,,
+Under GBP 50,6+ products,11,7,,,
+GBP 50-<100,1 product,32,5,,,
+GBP 50-<100,2-5 products,108,36,0.3333333333333333,0.25150495389408567,0.42661083268809985
+GBP 50-<100,6+ products,65,24,,,
+GBP 100-<250,1 product,33,6,,,
+GBP 100-<250,2-5 products,110,39,0.35454545454545455,0.27144143085862793,0.4474658957735652
+GBP 100-<250,6+ products,1138,402,0.3532513181019332,0.3260166900775718,0.38147334943723205
+GBP 250+,1 product,33,7,,,
+GBP 250+,2-5 products,84,40,,,
+GBP 250+,6+ products,1836,870,0.4738562091503268,0.45109505096583935,0.4967265401067228

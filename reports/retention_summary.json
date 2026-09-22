@@ -1,0 +1,284 @@
+{
+  "steps": [
+    8,
+    9
+  ],
+  "contract_version": "1.1",
+  "parameters": {
+    "history_start": "2009-12-01T00:00:00",
+    "cutoff": "2011-12-01T00:00:00",
+    "cohort_start": "2010-03-01T00:00:00"
+  },
+  "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "fact_orders_sha256": "dc3ff679cde467744f5836ea08d466afdb3ebab3b993255fab66d3a0c4c28a8c",
+  "sql_sha256": {
+    "03_customer_behavior.sql": "8d5d7a5b31f26d52f7e1f9e31c2c530e4dbc8a6aaccb25a531bb47bae1af3da3",
+    "04_cohort_retention.sql": "619d2fedbd25d59713ac4e2f5bb4b694d6d27545579be37d115c4aebea345acd"
+  },
+  "validation": {
+    "invoice_sequences_and_interpurchase_gaps": true,
+    "every_customer_window_matches_python": true,
+    "repeat_denominators_and_timestamp_sensitivity": true,
+    "common_population_counts_nondecreasing": true,
+    "every_cohort_cell_matches_invoice_sets": true,
+    "month_zero_and_future_nulls": true,
+    "maturity_weighted_pooled_rates": true,
+    "all_parquet_values_match_database": true
+  },
+  "table_counts": {
+    "customer_purchase_history": 35751,
+    "customer_repeat_windows": 17463,
+    "repeat_purchase_summary": 6,
+    "cohort_retention": 576,
+    "cohort_retention_pooled": 24
+  },
+  "description": {
+    "customers": 5821,
+    "one_purchase_customers": 1647,
+    "multiple_purchase_customers": 4174,
+    "primary_customers": 4127,
+    "initial_history_customers": 1694,
+    "identified_invoices": 35751,
+    "repeaters_within_90_days": 1452,
+    "conditional_median_days_to_second": 32.00451388888889,
+    "repeat_rate_90d": 0.4114480022669311
+  },
+  "repeat_purchase": [
+    {
+      "population": "common_90_day",
+      "window_days": 30,
+      "primary_customers": 4127,
+      "eligible_customers": 3529,
+      "incomplete_window_customers": 598,
+      "repeat_customers": 690,
+      "repeat_customers_collapsed_timestamp": 689,
+      "repeat_purchase_rate": 0.19552281099461605,
+      "collapsed_timestamp_repeat_rate": 0.1952394446018702
+    },
+    {
+      "population": "common_90_day",
+      "window_days": 60,
+      "primary_customers": 4127,
+      "eligible_customers": 3529,
+      "incomplete_window_customers": 598,
+      "repeat_customers": 1158,
+      "repeat_customers_collapsed_timestamp": 1157,
+      "repeat_purchase_rate": 0.32813828279965995,
+      "collapsed_timestamp_repeat_rate": 0.32785491640691417
+    },
+    {
+      "population": "common_90_day",
+      "window_days": 90,
+      "primary_customers": 4127,
+      "eligible_customers": 3529,
+      "incomplete_window_customers": 598,
+      "repeat_customers": 1452,
+      "repeat_customers_collapsed_timestamp": 1452,
+      "repeat_purchase_rate": 0.4114480022669311,
+      "collapsed_timestamp_repeat_rate": 0.4114480022669311
+    },
+    {
+      "population": "own_window",
+      "window_days": 30,
+      "primary_customers": 4127,
+      "eligible_customers": 3935,
+      "incomplete_window_customers": 192,
+      "repeat_customers": 794,
+      "repeat_customers_collapsed_timestamp": 791,
+      "repeat_purchase_rate": 0.20177890724269376,
+      "collapsed_timestamp_repeat_rate": 0.20101651842439644
+    },
+    {
+      "population": "own_window",
+      "window_days": 60,
+      "primary_customers": 4127,
+      "eligible_customers": 3714,
+      "incomplete_window_customers": 413,
+      "repeat_customers": 1246,
+      "repeat_customers_collapsed_timestamp": 1243,
+      "repeat_purchase_rate": 0.33548734518039847,
+      "collapsed_timestamp_repeat_rate": 0.33467959073774906
+    },
+    {
+      "population": "own_window",
+      "window_days": 90,
+      "primary_customers": 4127,
+      "eligible_customers": 3529,
+      "incomplete_window_customers": 598,
+      "repeat_customers": 1452,
+      "repeat_customers_collapsed_timestamp": 1452,
+      "repeat_purchase_rate": 0.4114480022669311,
+      "collapsed_timestamp_repeat_rate": 0.4114480022669311
+    }
+  ],
+  "pooled_cohorts": [
+    {
+      "month_index": 0,
+      "mature_cohorts": 21,
+      "eligible_customers": 4127,
+      "retained_customers": 4127,
+      "retention_rate": 1.0
+    },
+    {
+      "month_index": 1,
+      "mature_cohorts": 20,
+      "eligible_customers": 3935,
+      "retained_customers": 814,
+      "retention_rate": 0.206861499364676
+    },
+    {
+      "month_index": 2,
+      "mature_cohorts": 19,
+      "eligible_customers": 3714,
+      "retained_customers": 756,
+      "retention_rate": 0.2035541195476575
+    },
+    {
+      "month_index": 3,
+      "mature_cohorts": 18,
+      "eligible_customers": 3526,
+      "retained_customers": 673,
+      "retention_rate": 0.19086783891094725
+    },
+    {
+      "month_index": 4,
+      "mature_cohorts": 17,
+      "eligible_customers": 3419,
+      "retained_customers": 615,
+      "retention_rate": 0.17987715706346885
+    },
+    {
+      "month_index": 5,
+      "mature_cohorts": 16,
+      "eligible_customers": 3318,
+      "retained_customers": 565,
+      "retention_rate": 0.1702833031946956
+    },
+    {
+      "month_index": 6,
+      "mature_cohorts": 15,
+      "eligible_customers": 3210,
+      "retained_customers": 558,
+      "retention_rate": 0.17383177570093458
+    },
+    {
+      "month_index": 7,
+      "mature_cohorts": 14,
+      "eligible_customers": 3099,
+      "retained_customers": 523,
+      "retention_rate": 0.16876411745724426
+    },
+    {
+      "month_index": 8,
+      "mature_cohorts": 13,
+      "eligible_customers": 2993,
+      "retained_customers": 412,
+      "retention_rate": 0.1376545272302038
+    },
+    {
+      "month_index": 9,
+      "mature_cohorts": 12,
+      "eligible_customers": 2813,
+      "retained_customers": 308,
+      "retention_rate": 0.10949164592961251
+    },
+    {
+      "month_index": 10,
+      "mature_cohorts": 11,
+      "eligible_customers": 2689,
+      "retained_customers": 304,
+      "retention_rate": 0.11305317962067683
+    },
+    {
+      "month_index": 11,
+      "mature_cohorts": 10,
+      "eligible_customers": 2617,
+      "retained_customers": 356,
+      "retention_rate": 0.13603362628964463
+    },
+    {
+      "month_index": 12,
+      "mature_cohorts": 9,
+      "eligible_customers": 2541,
+      "retained_customers": 462,
+      "retention_rate": 0.18181818181818182
+    },
+    {
+      "month_index": 13,
+      "mature_cohorts": 8,
+      "eligible_customers": 2217,
+      "retained_customers": 370,
+      "retention_rate": 0.16689219666215607
+    },
+    {
+      "month_index": 14,
+      "mature_cohorts": 7,
+      "eligible_customers": 1841,
+      "retained_customers": 291,
+      "retention_rate": 0.15806626833242804
+    },
+    {
+      "month_index": 15,
+      "mature_cohorts": 6,
+      "eligible_customers": 1602,
+      "retained_customers": 250,
+      "retention_rate": 0.1560549313358302
+    },
+    {
+      "month_index": 16,
+      "mature_cohorts": 5,
+      "eligible_customers": 1440,
+      "retained_customers": 231,
+      "retention_rate": 0.16041666666666668
+    },
+    {
+      "month_index": 17,
+      "mature_cohorts": 4,
+      "eligible_customers": 1256,
+      "retained_customers": 209,
+      "retention_rate": 0.1664012738853503
+    },
+    {
+      "month_index": 18,
+      "mature_cohorts": 3,
+      "eligible_customers": 990,
+      "retained_customers": 170,
+      "retention_rate": 0.1717171717171717
+    },
+    {
+      "month_index": 19,
+      "mature_cohorts": 2,
+      "eligible_customers": 735,
+      "retained_customers": 157,
+      "retention_rate": 0.21360544217687075
+    },
+    {
+      "month_index": 20,
+      "mature_cohorts": 1,
+      "eligible_customers": 441,
+      "retained_customers": 94,
+      "retention_rate": 0.21315192743764172
+    },
+    {
+      "month_index": 21,
+      "mature_cohorts": 0,
+      "eligible_customers": 0,
+      "retained_customers": 0,
+      "retention_rate": null
+    },
+    {
+      "month_index": 22,
+      "mature_cohorts": 0,
+      "eligible_customers": 0,
+      "retained_customers": 0,
+      "retention_rate": null
+    },
+    {
+      "month_index": 23,
+      "mature_cohorts": 0,
+      "eligible_customers": 0,
+      "retained_customers": 0,
+      "retention_rate": null
+    }
+  ]
+}

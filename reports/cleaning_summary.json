@@ -1,0 +1,224 @@
+{
+  "step": 6,
+  "contract_version": "1.1",
+  "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "product_mapping_sha256": "f3309eee6603879e12a82aa15e769bb6560211ba569e0d953633d6f7c59aac35",
+  "definition": "Eligible positive merchandise purchases in [2009-12-01,2011-12-01); gross sales, not net revenue",
+  "validation": {
+    "all_source_rows_preserved": true,
+    "raw_values_preserved": true,
+    "one_product_mapping_per_code": true,
+    "positive_merchandise_only": true,
+    "complete_reporting_window": true,
+    "no_orphan_lines": true,
+    "line_order_money_reconciles": true,
+    "customer_money_reconciles": true,
+    "customer_order_counts_reconcile": true,
+    "customer_order_sequence_contiguous": true,
+    "first_order_not_backfilled": true,
+    "activity_matches_orders": true,
+    "unknown_customers_not_invented": true,
+    "same_sheet_sensitivity_superset": true
+  },
+  "results": {
+    "table_counts": {
+      "stg_order_lines": 1067371,
+      "fact_order_lines": 972818,
+      "fact_orders": 38615,
+      "customer_features": 5821,
+      "customer_month_activity": 24850
+    },
+    "waterfall": [
+      {
+        "primary_disposition": "credit_invoice",
+        "rows": 18742,
+        "candidate_positive_gbp": "0.000000"
+      },
+      {
+        "primary_disposition": "exact_duplicate",
+        "rows": 11812,
+        "candidate_positive_gbp": "57481.470000"
+      },
+      {
+        "primary_disposition": "header_conflict",
+        "rows": 5721,
+        "candidate_positive_gbp": "98126.330000"
+      },
+      {
+        "primary_disposition": "included",
+        "rows": 972818,
+        "candidate_positive_gbp": "18933017.227000"
+      },
+      {
+        "primary_disposition": "invalid_invoice_format",
+        "rows": 6,
+        "candidate_positive_gbp": "0.000000"
+      },
+      {
+        "primary_disposition": "non_merchandise",
+        "rows": 3696,
+        "candidate_positive_gbp": "457520.931000"
+      },
+      {
+        "primary_disposition": "nonpositive_price",
+        "rows": 2597,
+        "candidate_positive_gbp": "0.000000"
+      },
+      {
+        "primary_disposition": "nonpositive_quantity",
+        "rows": 3363,
+        "candidate_positive_gbp": "0.000000"
+      },
+      {
+        "primary_disposition": "outside_reporting_window_or_invalid_date",
+        "rows": 25247,
+        "candidate_positive_gbp": "637808.330000"
+      },
+      {
+        "primary_disposition": "overlap_copy",
+        "rows": 22523,
+        "candidate_positive_gbp": "438852.650000"
+      },
+      {
+        "primary_disposition": "unresolved_product",
+        "rows": 846,
+        "candidate_positive_gbp": "338725.570000"
+      }
+    ],
+    "overlapping_reasons": [
+      {
+        "reason": "credit_invoice",
+        "rows": 19494
+      },
+      {
+        "reason": "exact_duplicate",
+        "rows": 12133
+      },
+      {
+        "reason": "header_conflict",
+        "rows": 5796
+      },
+      {
+        "reason": "invalid_invoice_format",
+        "rows": 6
+      },
+      {
+        "reason": "non_merchandise",
+        "rows": 4483
+      },
+      {
+        "reason": "nonpositive_price",
+        "rows": 6207
+      },
+      {
+        "reason": "nonpositive_quantity",
+        "rows": 22950
+      },
+      {
+        "reason": "outside_reporting_window_or_invalid_date",
+        "rows": 25526
+      },
+      {
+        "reason": "overlap_copy",
+        "rows": 22523
+      },
+      {
+        "reason": "unresolved_product",
+        "rows": 1952
+      }
+    ],
+    "product_roles": [
+      {
+        "product_role": "merchandise",
+        "codes": 4720
+      },
+      {
+        "product_role": "non_merchandise",
+        "codes": 25
+      },
+      {
+        "product_role": "unresolved",
+        "codes": 386
+      }
+    ],
+    "unresolved_exposure": [
+      {
+        "stock_code": "M",
+        "rows": 840,
+        "candidate_positive_gbp": "338561.720000"
+      },
+      {
+        "stock_code": "S",
+        "rows": 3,
+        "candidate_positive_gbp": "136.850000"
+      },
+      {
+        "stock_code": "23702",
+        "rows": 3,
+        "candidate_positive_gbp": "27.000000"
+      }
+    ],
+    "coverage": [
+      {
+        "is_identified": false,
+        "orders": 2864,
+        "gross_merchandise_sales_gbp": "2414661.240000"
+      },
+      {
+        "is_identified": true,
+        "orders": 35751,
+        "gross_merchandise_sales_gbp": "16518355.987000"
+      }
+    ],
+    "normalization": [
+      {
+        "price_precision_status": "representation_noise_candidate",
+        "rows": 112879,
+        "eligible_rows": 103693
+      },
+      {
+        "price_precision_status": "exact_within_six_decimals",
+        "rows": 954492,
+        "eligible_rows": 869125
+      }
+    ],
+    "duplicates_sensitivity": [
+      {
+        "scenario": "primary",
+        "orders": 38615,
+        "sales_gbp": "18933017.227000",
+        "aov_gbp": "490.302142"
+      },
+      {
+        "scenario": "keep_within_sheet_duplicates",
+        "orders": 38615,
+        "sales_gbp": "18988953.197000",
+        "aov_gbp": "491.750698"
+      }
+    ],
+    "same_timestamp_sensitivity": [
+      {
+        "identified_invoices": 35751,
+        "distinct_customer_timestamp_occasions": 35577
+      }
+    ],
+    "extreme_purchase_sensitivity": [
+      {
+        "scenario": "retain_all_eligible",
+        "orders": 38615,
+        "sales_gbp": "18933017.227000"
+      },
+      {
+        "scenario": "exclude_541431_for_sensitivity_only",
+        "orders": 38614,
+        "sales_gbp": "18855833.627000"
+      }
+    ],
+    "header_quarantine": [
+      {
+        "invoice_versions": 84,
+        "rows": 5796
+      }
+    ]
+  }
+}

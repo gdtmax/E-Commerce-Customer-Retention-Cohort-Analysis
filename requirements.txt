@@ -1,0 +1,8 @@
+# Direct dependencies, verified together on Windows with Python 3.12.14.
+duckdb==1.4.5
+numpy==2.2.6
+pandas==2.3.3
+openpyxl==3.1.5
+matplotlib==3.10.8
+jupyterlab==4.4.10
+ipykernel==6.30.1

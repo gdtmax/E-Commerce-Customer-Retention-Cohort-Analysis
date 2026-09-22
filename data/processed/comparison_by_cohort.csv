@@ -1,0 +1,191 @@
+feature,group,cohort_month,eligible_customers,repeat_customers,repeat_rate_90d
+first_order_value_band,Under GBP 50,2010-03-01,12,2,
+first_order_value_band,Under GBP 50,2010-04-01,10,3,
+first_order_value_band,Under GBP 50,2010-05-01,7,0,
+first_order_value_band,Under GBP 50,2010-06-01,7,1,
+first_order_value_band,Under GBP 50,2010-07-01,11,2,
+first_order_value_band,Under GBP 50,2010-08-01,4,1,
+first_order_value_band,Under GBP 50,2010-09-01,4,2,
+first_order_value_band,Under GBP 50,2010-10-01,7,3,
+first_order_value_band,Under GBP 50,2010-11-01,2,0,
+first_order_value_band,Under GBP 50,2010-12-01,2,0,
+first_order_value_band,Under GBP 50,2011-01-01,1,1,
+first_order_value_band,Under GBP 50,2011-02-01,3,1,
+first_order_value_band,Under GBP 50,2011-03-01,6,2,
+first_order_value_band,Under GBP 50,2011-04-01,5,1,
+first_order_value_band,Under GBP 50,2011-05-01,1,0,
+first_order_value_band,Under GBP 50,2011-06-01,2,0,
+first_order_value_band,Under GBP 50,2011-07-01,2,1,
+first_order_value_band,Under GBP 50,2011-08-01,4,3,
+first_order_value_band,Under GBP 50,2011-09-01,0,0,
+first_order_value_band,GBP 50-<100,2010-03-01,22,7,0.3181818181818182
+first_order_value_band,GBP 50-<100,2010-04-01,10,3,
+first_order_value_band,GBP 50-<100,2010-05-01,14,5,
+first_order_value_band,GBP 50-<100,2010-06-01,15,7,
+first_order_value_band,GBP 50-<100,2010-07-01,17,4,
+first_order_value_band,GBP 50-<100,2010-08-01,5,2,
+first_order_value_band,GBP 50-<100,2010-09-01,8,4,
+first_order_value_band,GBP 50-<100,2010-10-01,21,6,0.2857142857142857
+first_order_value_band,GBP 50-<100,2010-11-01,21,4,0.19047619047619047
+first_order_value_band,GBP 50-<100,2010-12-01,9,1,
+first_order_value_band,GBP 50-<100,2011-01-01,5,2,
+first_order_value_band,GBP 50-<100,2011-02-01,12,3,
+first_order_value_band,GBP 50-<100,2011-03-01,9,3,
+first_order_value_band,GBP 50-<100,2011-04-01,4,0,
+first_order_value_band,GBP 50-<100,2011-05-01,13,7,
+first_order_value_band,GBP 50-<100,2011-06-01,11,6,
+first_order_value_band,GBP 50-<100,2011-07-01,2,0,
+first_order_value_band,GBP 50-<100,2011-08-01,7,1,
+first_order_value_band,GBP 50-<100,2011-09-01,0,0,
+first_order_value_band,GBP 100-<250,2010-03-01,143,51,0.35664335664335667
+first_order_value_band,GBP 100-<250,2010-04-01,93,26,0.27956989247311825
+first_order_value_band,GBP 100-<250,2010-05-01,102,27,0.2647058823529412
+first_order_value_band,GBP 100-<250,2010-06-01,101,29,0.2871287128712871
+first_order_value_band,GBP 100-<250,2010-07-01,67,22,0.3283582089552239
+first_order_value_band,GBP 100-<250,2010-08-01,67,33,0.4925373134328358
+first_order_value_band,GBP 100-<250,2010-09-01,91,38,0.4175824175824176
+first_order_value_band,GBP 100-<250,2010-10-01,130,50,0.38461538461538464
+first_order_value_band,GBP 100-<250,2010-11-01,124,44,0.3548387096774194
+first_order_value_band,GBP 100-<250,2010-12-01,28,3,0.10714285714285714
+first_order_value_band,GBP 100-<250,2011-01-01,29,8,0.27586206896551724
+first_order_value_band,GBP 100-<250,2011-02-01,48,16,0.3333333333333333
+first_order_value_band,GBP 100-<250,2011-03-01,65,23,0.35384615384615387
+first_order_value_band,GBP 100-<250,2011-04-01,34,11,0.3235294117647059
+first_order_value_band,GBP 100-<250,2011-05-01,40,18,0.45
+first_order_value_band,GBP 100-<250,2011-06-01,42,14,0.3333333333333333
+first_order_value_band,GBP 100-<250,2011-07-01,39,22,0.5641025641025641
+first_order_value_band,GBP 100-<250,2011-08-01,36,11,0.3055555555555556
+first_order_value_band,GBP 100-<250,2011-09-01,2,1,
+first_order_value_band,GBP 250+,2010-03-01,264,133,0.5037878787878788
+first_order_value_band,GBP 250+,2010-04-01,181,84,0.46408839779005523
+first_order_value_band,GBP 250+,2010-05-01,132,62,0.4696969696969697
+first_order_value_band,GBP 250+,2010-06-01,143,66,0.46153846153846156
+first_order_value_band,GBP 250+,2010-07-01,89,53,0.5955056179775281
+first_order_value_band,GBP 250+,2010-08-01,86,48,0.5581395348837209
+first_order_value_band,GBP 250+,2010-09-01,136,64,0.47058823529411764
+first_order_value_band,GBP 250+,2010-10-01,218,92,0.42201834862385323
+first_order_value_band,GBP 250+,2010-11-01,177,64,0.3615819209039548
+first_order_value_band,GBP 250+,2010-12-01,37,8,0.21621621621621623
+first_order_value_band,GBP 250+,2011-01-01,37,19,0.5135135135135135
+first_order_value_band,GBP 250+,2011-02-01,61,19,0.3114754098360656
+first_order_value_band,GBP 250+,2011-03-01,100,48,0.48
+first_order_value_band,GBP 250+,2011-04-01,63,28,0.4444444444444444
+first_order_value_band,GBP 250+,2011-05-01,57,23,0.40350877192982454
+first_order_value_band,GBP 250+,2011-06-01,53,34,0.6415094339622641
+first_order_value_band,GBP 250+,2011-07-01,58,33,0.5689655172413793
+first_order_value_band,GBP 250+,2011-08-01,60,39,0.65
+first_order_value_band,GBP 250+,2011-09-01,1,0,
+first_order_product_band,1 product,2010-03-01,10,3,
+first_order_product_band,1 product,2010-04-01,14,5,
+first_order_product_band,1 product,2010-05-01,8,1,
+first_order_product_band,1 product,2010-06-01,14,3,
+first_order_product_band,1 product,2010-07-01,10,1,
+first_order_product_band,1 product,2010-08-01,7,0,
+first_order_product_band,1 product,2010-09-01,7,3,
+first_order_product_band,1 product,2010-10-01,11,3,
+first_order_product_band,1 product,2010-11-01,8,0,
+first_order_product_band,1 product,2010-12-01,5,0,
+first_order_product_band,1 product,2011-01-01,6,1,
+first_order_product_band,1 product,2011-02-01,7,0,
+first_order_product_band,1 product,2011-03-01,6,1,
+first_order_product_band,1 product,2011-04-01,5,0,
+first_order_product_band,1 product,2011-05-01,5,0,
+first_order_product_band,1 product,2011-06-01,3,1,
+first_order_product_band,1 product,2011-07-01,4,2,
+first_order_product_band,1 product,2011-08-01,5,0,
+first_order_product_band,1 product,2011-09-01,2,1,
+first_order_product_band,2-5 products,2010-03-01,42,15,0.35714285714285715
+first_order_product_band,2-5 products,2010-04-01,30,8,0.26666666666666666
+first_order_product_band,2-5 products,2010-05-01,24,4,0.16666666666666666
+first_order_product_band,2-5 products,2010-06-01,20,12,0.6
+first_order_product_band,2-5 products,2010-07-01,28,9,0.32142857142857145
+first_order_product_band,2-5 products,2010-08-01,10,5,
+first_order_product_band,2-5 products,2010-09-01,23,11,0.4782608695652174
+first_order_product_band,2-5 products,2010-10-01,29,9,0.3103448275862069
+first_order_product_band,2-5 products,2010-11-01,29,10,0.3448275862068966
+first_order_product_band,2-5 products,2010-12-01,10,3,
+first_order_product_band,2-5 products,2011-01-01,9,4,
+first_order_product_band,2-5 products,2011-02-01,14,6,
+first_order_product_band,2-5 products,2011-03-01,23,8,0.34782608695652173
+first_order_product_band,2-5 products,2011-04-01,9,2,
+first_order_product_band,2-5 products,2011-05-01,11,4,
+first_order_product_band,2-5 products,2011-06-01,15,7,
+first_order_product_band,2-5 products,2011-07-01,5,2,
+first_order_product_band,2-5 products,2011-08-01,11,5,
+first_order_product_band,2-5 products,2011-09-01,0,0,
+first_order_product_band,6+ products,2010-03-01,389,175,0.4498714652956298
+first_order_product_band,6+ products,2010-04-01,250,103,0.412
+first_order_product_band,6+ products,2010-05-01,223,89,0.3991031390134529
+first_order_product_band,6+ products,2010-06-01,232,88,0.3793103448275862
+first_order_product_band,6+ products,2010-07-01,146,71,0.4863013698630137
+first_order_product_band,6+ products,2010-08-01,145,79,0.5448275862068965
+first_order_product_band,6+ products,2010-09-01,209,94,0.44976076555023925
+first_order_product_band,6+ products,2010-10-01,336,139,0.41369047619047616
+first_order_product_band,6+ products,2010-11-01,287,102,0.3554006968641115
+first_order_product_band,6+ products,2010-12-01,61,9,0.14754098360655737
+first_order_product_band,6+ products,2011-01-01,57,25,0.43859649122807015
+first_order_product_band,6+ products,2011-02-01,103,33,0.32038834951456313
+first_order_product_band,6+ products,2011-03-01,151,67,0.44370860927152317
+first_order_product_band,6+ products,2011-04-01,92,38,0.41304347826086957
+first_order_product_band,6+ products,2011-05-01,95,44,0.4631578947368421
+first_order_product_band,6+ products,2011-06-01,90,46,0.5111111111111111
+first_order_product_band,6+ products,2011-07-01,92,52,0.5652173913043478
+first_order_product_band,6+ products,2011-08-01,91,49,0.5384615384615384
+first_order_product_band,6+ products,2011-09-01,1,0,
+first_order_geography,United Kingdom,2010-03-01,411,182,0.44282238442822386
+first_order_geography,United Kingdom,2010-04-01,268,111,0.4141791044776119
+first_order_geography,United Kingdom,2010-05-01,234,85,0.36324786324786323
+first_order_geography,United Kingdom,2010-06-01,242,93,0.384297520661157
+first_order_geography,United Kingdom,2010-07-01,162,69,0.42592592592592593
+first_order_geography,United Kingdom,2010-08-01,148,76,0.5135135135135135
+first_order_geography,United Kingdom,2010-09-01,216,99,0.4583333333333333
+first_order_geography,United Kingdom,2010-10-01,338,133,0.39349112426035504
+first_order_geography,United Kingdom,2010-11-01,304,105,0.34539473684210525
+first_order_geography,United Kingdom,2010-12-01,64,9,0.140625
+first_order_geography,United Kingdom,2011-01-01,63,26,0.4126984126984127
+first_order_geography,United Kingdom,2011-02-01,109,34,0.3119266055045872
+first_order_geography,United Kingdom,2011-03-01,164,70,0.4268292682926829
+first_order_geography,United Kingdom,2011-04-01,93,35,0.3763440860215054
+first_order_geography,United Kingdom,2011-05-01,97,39,0.4020618556701031
+first_order_geography,United Kingdom,2011-06-01,94,44,0.46808510638297873
+first_order_geography,United Kingdom,2011-07-01,89,53,0.5955056179775281
+first_order_geography,United Kingdom,2011-08-01,87,45,0.5172413793103449
+first_order_geography,United Kingdom,2011-09-01,2,1,
+first_order_geography,Other known country,2010-03-01,30,11,0.36666666666666664
+first_order_geography,Other known country,2010-04-01,25,5,0.2
+first_order_geography,Other known country,2010-05-01,21,9,0.42857142857142855
+first_order_geography,Other known country,2010-06-01,24,10,0.4166666666666667
+first_order_geography,Other known country,2010-07-01,22,12,0.5454545454545454
+first_order_geography,Other known country,2010-08-01,14,8,
+first_order_geography,Other known country,2010-09-01,23,9,0.391304347826087
+first_order_geography,Other known country,2010-10-01,38,18,0.47368421052631576
+first_order_geography,Other known country,2010-11-01,19,7,
+first_order_geography,Other known country,2010-12-01,12,3,
+first_order_geography,Other known country,2011-01-01,9,4,
+first_order_geography,Other known country,2011-02-01,15,5,
+first_order_geography,Other known country,2011-03-01,16,6,
+first_order_geography,Other known country,2011-04-01,12,5,
+first_order_geography,Other known country,2011-05-01,14,9,
+first_order_geography,Other known country,2011-06-01,14,10,
+first_order_geography,Other known country,2011-07-01,11,2,
+first_order_geography,Other known country,2011-08-01,20,9,0.45
+first_order_geography,Other known country,2011-09-01,1,0,
+first_order_geography,Unknown,2010-03-01,0,0,
+first_order_geography,Unknown,2010-04-01,1,0,
+first_order_geography,Unknown,2010-05-01,0,0,
+first_order_geography,Unknown,2010-06-01,0,0,
+first_order_geography,Unknown,2010-07-01,0,0,
+first_order_geography,Unknown,2010-08-01,0,0,
+first_order_geography,Unknown,2010-09-01,0,0,
+first_order_geography,Unknown,2010-10-01,0,0,
+first_order_geography,Unknown,2010-11-01,1,0,
+first_order_geography,Unknown,2010-12-01,0,0,
+first_order_geography,Unknown,2011-01-01,0,0,
+first_order_geography,Unknown,2011-02-01,0,0,
+first_order_geography,Unknown,2011-03-01,0,0,
+first_order_geography,Unknown,2011-04-01,1,0,
+first_order_geography,Unknown,2011-05-01,0,0,
+first_order_geography,Unknown,2011-06-01,0,0,
+first_order_geography,Unknown,2011-07-01,1,1,
+first_order_geography,Unknown,2011-08-01,0,0,
+first_order_geography,Unknown,2011-09-01,0,0,

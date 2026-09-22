@@ -1,0 +1,379 @@
+{
+  "status": "passed",
+  "pipeline_stages": 9,
+  "executed_notebooks": 1,
+  "executed_code_cells": 17,
+  "regression_suites": 6,
+  "published_csvs": 11,
+  "csv_comparison": "All 11 byte-identical to validated pre-reorganization results",
+  "images_comparison": "All 6 byte-identical",
+  "local_links_checked": 155,
+  "git_rules_verified": true,
+  "source_note": "Verified existing original workbook; prior audit separately tested fresh network download. Final run rebuilt all analytical outputs in a scratch directory.",
+  "pipeline_record": "pipeline_run.json",
+  "inventory_note": "Current final package; hashes exclude this self-referential validation file.",
+  "file_count": 73,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 970,
+      "sha256": "bf5295602dafaf107a05dd8525b927708d762501983f9fba39bbd57c6ff058a6"
+    },
+    {
+      "path": "dashboard/index.html",
+      "bytes": 135029,
+      "sha256": "5426cfe06397be4d916b41e2c4aec3b200c43120b1c4addc3dc28a8251c347bc"
+    },
+    {
+      "path": "data/processed/basket_value_product_comparison.csv",
+      "bytes": 749,
+      "sha256": "b1ec757c98ee85aaa6e9379049f2790cd1173c7cb742aa0fcf76755d974dc587"
+    },
+    {
+      "path": "data/processed/cohort_retention.csv",
+      "bytes": 30064,
+      "sha256": "48d398bba8b3e6ffb3b1fb29ad6d896a5c530a52ed62e3e5214f9b6a77e881f0"
+    },
+    {
+      "path": "data/processed/cohort_retention_matrix.csv",
+      "bytes": 4989,
+      "sha256": "cce121f6c925cc450f0ef7aadfc679771be59111c8ba0a57da3a08c9fc1a2eb6"
+    },
+    {
+      "path": "data/processed/cohort_retention_pooled.csv",
+      "bytes": 824,
+      "sha256": "2a8a7676926c4c23c11d91ed093f73ca512d281c9f96831015ace28f7635d34e"
+    },
+    {
+      "path": "data/processed/comparison_by_cohort.csv",
+      "bytes": 11933,
+      "sha256": "2acfb4a278c632875d65b3af5b841c55a2dbec52dae2b265eba239c39f9fe0d8"
+    },
+    {
+      "path": "data/processed/customer_comparisons.csv",
+      "bytes": 1313,
+      "sha256": "6f93d72be3e95ec4988c55184db937966102fef44d748b792dc29789d302582b"
+    },
+    {
+      "path": "data/processed/monthly_kpis.csv",
+      "bytes": 4624,
+      "sha256": "ed7ddeda646025f2016c4158fba4f4a2840499d2a45b88c348087d025ed9d248"
+    },
+    {
+      "path": "data/processed/reactivation_thresholds.csv",
+      "bytes": 138,
+      "sha256": "93a670f6a914ed961e898a98df241dcfc53c3bdd2b241da44f30ff7943d5f751"
+    },
+    {
+      "path": "data/processed/README.md",
+      "bytes": 2048,
+      "sha256": "90265e2898ff6caecf1ce81b923ce505abb6e8138062cb39c51d8acfe776fa8a"
+    },
+    {
+      "path": "data/processed/repeat_purchase_summary.csv",
+      "bytes": 670,
+      "sha256": "15a7b3eddb0203aaa8b570b2f86a3d976a63ae8316d678fcf2501095bdb845b8"
+    },
+    {
+      "path": "data/processed/rfm_segments.csv",
+      "bytes": 804,
+      "sha256": "384ea288a9727a88de4c7528a598bb998c557c766ca0d9668503dcf1b6acff2a"
+    },
+    {
+      "path": "data/processed/rfm_sensitivity.csv",
+      "bytes": 437,
+      "sha256": "a5adc1b64cb86227bdf62f55ef8f6875a500c5ce847f65a5911b7d583542d8f0"
+    },
+    {
+      "path": "data/raw/README.md",
+      "bytes": 2453,
+      "sha256": "3c4f454919b4ade482eb6662f11c7a485b3fedb1bde4d02a8ea42644ad20733b"
+    },
+    {
+      "path": "data/raw/source_manifest.json",
+      "bytes": 1300,
+      "sha256": "f8eba2f937f143bd5df1b316cb163697141b403323f594ae769e351bde55bfe7"
+    },
+    {
+      "path": "data_dictionary.md",
+      "bytes": 36996,
+      "sha256": "d7b8c33114cb1b44fb107a930472917358ecc300793759a0eeef74015d42381d"
+    },
+    {
+      "path": "images/cohort_retention_heatmap.png",
+      "bytes": 331699,
+      "sha256": "1cad074af31375798b093b8c21081ebbadf13158fc627cbadb9ced57ce33ccaf"
+    },
+    {
+      "path": "images/customer_group_comparisons.png",
+      "bytes": 123656,
+      "sha256": "b3c6fda0318e38b08eab3efbe987ef19ba036f727f165e74730701c5ae4776db"
+    },
+    {
+      "path": "images/customer_value_concentration.png",
+      "bytes": 101503,
+      "sha256": "c78ea7fb9a247767dbefb100c07fe1c457598419490214b17ce4f3368e25b8d8"
+    },
+    {
+      "path": "images/monthly_kpis.png",
+      "bytes": 178926,
+      "sha256": "ab0b242a14c5289c83620f4d698ac739b2d7e6f6e039423f9a86fbde39e03740"
+    },
+    {
+      "path": "images/repeat_purchase_windows.png",
+      "bytes": 82822,
+      "sha256": "89609cc5d9800e004dd4b24f51906b6f741fe79783154905efeb4c44a41d332c"
+    },
+    {
+      "path": "images/rfm_segments.png",
+      "bytes": 77316,
+      "sha256": "1ccf630f0466d5e0a121ca1525a9f9a2722c03dddff35da4bbd9bb37045af716"
+    },
+    {
+      "path": "notebooks/ecommerce_retention_analysis.ipynb",
+      "bytes": 1118440,
+      "sha256": "5e031f1393bee0ae03988debe20d5aabc9df5f7d17279f002d6612d30e1c1758"
+    },
+    {
+      "path": "README.md",
+      "bytes": 13462,
+      "sha256": "33c849e9a82c74d351f0a980391cd2d04b136d9613897a42f8527dc9ed1d308b"
+    },
+    {
+      "path": "reports/case_study.md",
+      "bytes": 14835,
+      "sha256": "daba2073466b1c8cd36265b226c37e0762f728d4517c3e39c1abc416f531c27e"
+    },
+    {
+      "path": "reports/cleaning_report.md",
+      "bytes": 9713,
+      "sha256": "ec555299e79d3f4222a117efba86ad03189cc0ac4e44306b376868c94ba5c1a3"
+    },
+    {
+      "path": "reports/cleaning_summary.json",
+      "bytes": 5896,
+      "sha256": "deeaf8edb37d80c30aa759ec080c9310ad8480ca58018df37d5d8cfe272c48d9"
+    },
+    {
+      "path": "reports/cohort_visualization.md",
+      "bytes": 2203,
+      "sha256": "914b9109a91f8c5ed973d08b0c08dd638dbb137f1acd29fa6dcfcde9f354e215"
+    },
+    {
+      "path": "reports/customer_analysis_summary.json",
+      "bytes": 17548,
+      "sha256": "5327276f084046737ff710ef795997d0a3e992c02e5a9d48e3ce0c29f8822162"
+    },
+    {
+      "path": "reports/customer_value_and_segments.md",
+      "bytes": 11797,
+      "sha256": "741e2f68aa167554a47fdc3fe54b09024e131e938bffa5ee838f1e8514e17ac4"
+    },
+    {
+      "path": "reports/data_quality_report.md",
+      "bytes": 15775,
+      "sha256": "5d482929107c8cfbefe79392bcf238fea52a8b1a97c036ebbfe5bbfda766c421"
+    },
+    {
+      "path": "reports/data_quality_summary.json",
+      "bytes": 44575,
+      "sha256": "68e26e8bb0941db9b51718836d62a21584ae17c3a9d2599b202046a4ed8c5bd6"
+    },
+    {
+      "path": "reports/dataset_profile.json",
+      "bytes": 4247,
+      "sha256": "2497e9c599ddcc90af993a101f346b7c83f82a4fa83dc1d5ccf9ad92f753d911"
+    },
+    {
+      "path": "reports/dataset_selection.md",
+      "bytes": 12674,
+      "sha256": "e9b50e8b6dcbc906996a93bd76a76ce5e568c7f8e6fa725d1dce028599b30618"
+    },
+    {
+      "path": "reports/metric_examples.md",
+      "bytes": 9050,
+      "sha256": "b003d9420fb98716835139fa5122c0fcf25acb5736190bb521118fd4e592afbb"
+    },
+    {
+      "path": "reports/monthly_kpis_report.md",
+      "bytes": 7270,
+      "sha256": "52f36bc28918d007d85c1bb32cc94c83db07f39314abf590783dce6966a5c3cb"
+    },
+    {
+      "path": "reports/monthly_kpis_summary.json",
+      "bytes": 1003,
+      "sha256": "4d1cebb4425a393c97cf44cb74941e3529e5cc3c3b28e99e8ddb472805bc750a"
+    },
+    {
+      "path": "reports/pipeline_run.json",
+      "bytes": 1614,
+      "sha256": "6c4c896a88bd80f4e935f63569796519f0578777295820cf6ab2b9580092be6f"
+    },
+    {
+      "path": "reports/project_plan.md",
+      "bytes": 7951,
+      "sha256": "a413c7067f3f498b0831227174b40279ba53f5cca71effcab61f8c9d6da5ab43"
+    },
+    {
+      "path": "reports/reproducibility.md",
+      "bytes": 8809,
+      "sha256": "5cd587447928337ab5b988910260f44e28823c60d3d658be9178f03267d615a9"
+    },
+    {
+      "path": "reports/reproducibility_results.json",
+      "bytes": 8559,
+      "sha256": "5df9e633b9e999451c648410f445ffcbbd4da22bb727761a02085ceb07905d17"
+    },
+    {
+      "path": "reports/retention_analysis.md",
+      "bytes": 6880,
+      "sha256": "10c3d305d9cddd9248d242cb6708fc5bf3f89f12b25999a0df18e4d1e3f8b6cc"
+    },
+    {
+      "path": "reports/retention_summary.json",
+      "bytes": 8336,
+      "sha256": "1fc091b29936d3112a74a5560457b3209ea610c351e294466b82c0820bffef76"
+    },
+    {
+      "path": "reports/visualization_validation.json",
+      "bytes": 682,
+      "sha256": "1d6ad05b26619a9a738c85ade11b68e408448fcbc831ab4d8c512a4c659ccb86"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 186,
+      "sha256": "d4a9340aa78ae49fbf1d35dadc38fa4b502800a978766ef010dbca21007f36b1"
+    },
+    {
+      "path": "sql/01_data_quality.sql",
+      "bytes": 15810,
+      "sha256": "f9bcb59c00e6357cc49df22aef9916516640d89891ed760945322cc78a48093b"
+    },
+    {
+      "path": "sql/01b_clean_data.sql",
+      "bytes": 6929,
+      "sha256": "0bd1036c9a13c61dcf3d46b2762bf3225594302c0d62f18fd38754a63b0d6771"
+    },
+    {
+      "path": "sql/02_monthly_kpis.sql",
+      "bytes": 2973,
+      "sha256": "17708758c57a08561aa7a3a263d98f8054daebd288b855498c2b7b390463e179"
+    },
+    {
+      "path": "sql/03_customer_behavior.sql",
+      "bytes": 3784,
+      "sha256": "8d5d7a5b31f26d52f7e1f9e31c2c530e4dbc8a6aaccb25a531bb47bae1af3da3"
+    },
+    {
+      "path": "sql/04_cohort_retention.sql",
+      "bytes": 2644,
+      "sha256": "619d2fedbd25d59713ac4e2f5bb4b694d6d27545579be37d115c4aebea345acd"
+    },
+    {
+      "path": "sql/05_rfm_segments.sql",
+      "bytes": 2459,
+      "sha256": "70bf7678ff65d9f69399db96e5f7399e9f877ec1f317ab710ea4a6128b980240"
+    },
+    {
+      "path": "sql/06_customer_comparisons.sql",
+      "bytes": 2143,
+      "sha256": "9128cae450e96183793af1bcf99b3e10c8dc52adcc6f5b5be240f505a3c7a710"
+    },
+    {
+      "path": "src/audit_data.py",
+      "bytes": 9950,
+      "sha256": "45a0855bb2afd2fa698970b119af9aa4bad4bd047b243e7ae30c37756b6f7b33"
+    },
+    {
+      "path": "src/build_dashboard.py",
+      "bytes": 9795,
+      "sha256": "ab83a79d7ffd7cf7c0e89eeba4488ff714a42250a032e6a6b6dc4302d87484b5"
+    },
+    {
+      "path": "src/check_project.py",
+      "bytes": 722,
+      "sha256": "beca98db26650c0935e7dc71067f4a9e97a9cbeb146fe58c5cdd300631e52db2"
+    },
+    {
+      "path": "src/checks/test_audit_logic.py",
+      "bytes": 3469,
+      "sha256": "348c10505fd674d6677e4e438c27e46ba58f6095aabece2ec51525f93f53f712"
+    },
+    {
+      "path": "src/checks/test_cleaning_logic.py",
+      "bytes": 4282,
+      "sha256": "832d8638a2624fad03c54f19b9c1954e544bdced7d356782a6c9f615b1e15033"
+    },
+    {
+      "path": "src/checks/test_customer_analysis.py",
+      "bytes": 3301,
+      "sha256": "1f388d5041636385a5090716e62759f431f2f0ed81e1fef84bd66c5985855681"
+    },
+    {
+      "path": "src/checks/test_monthly_kpis.py",
+      "bytes": 2236,
+      "sha256": "e5385751dcc5a2a9993c6dfc15c7f6ccb9e1fb0ccbd7660fba7a0276560074b7"
+    },
+    {
+      "path": "src/checks/test_pipeline_and_reports.py",
+      "bytes": 2747,
+      "sha256": "edc64c804cfd7763768ff16f029337dc9faa660259e4c4ab5b10833796e4b10a"
+    },
+    {
+      "path": "src/checks/test_retention_analysis.py",
+      "bytes": 2944,
+      "sha256": "ec5ee068eb1ab9568ea0158ec72ebe015ab557fffcb7efc0ef3749c601299e75"
+    },
+    {
+      "path": "src/clean_data.py",
+      "bytes": 11186,
+      "sha256": "a5cb0c4cd2b56af314816e9f167ff7be2e5d59dc98b0b15fd0addc66145c3e1a"
+    },
+    {
+      "path": "src/customer_analysis.py",
+      "bytes": 18041,
+      "sha256": "55180f54c1d820d8f115ebef57227e81ae56652454faef08515ef6e06c0bd8ae"
+    },
+    {
+      "path": "src/download_dataset.py",
+      "bytes": 2435,
+      "sha256": "f8fc3d3b0bba6686741adfab15658a1207da1f5a436c8e0c9576f4729d4519b5"
+    },
+    {
+      "path": "src/metric_spec.json",
+      "bytes": 6023,
+      "sha256": "92a01edb41fa6a6ed405e385494287faede2211436901427c8736b2a8f3db3d4"
+    },
+    {
+      "path": "src/monthly_kpis.py",
+      "bytes": 16496,
+      "sha256": "9a827e95ad0b4f40b8c61329bbabd231c8521a25235380a6d044041c0e8b6c76"
+    },
+    {
+      "path": "src/product_roles.csv",
+      "bytes": 773964,
+      "sha256": "f3309eee6603879e12a82aa15e769bb6560211ba569e0d953633d6f7c59aac35"
+    },
+    {
+      "path": "src/profile_dataset.py",
+      "bytes": 10332,
+      "sha256": "f3a0511cd1ecd3b92072b8d28687461de6327978baf4a75c520f84f88532b569"
+    },
+    {
+      "path": "src/retention_analysis.py",
+      "bytes": 18804,
+      "sha256": "0d820c606fad95e227b12ed24f86edcea25824cdbe76cc69ca15b4af321561f1"
+    },
+    {
+      "path": "src/run_pipeline.py",
+      "bytes": 5099,
+      "sha256": "4cee14fccba7afd7688fe286124b0b85dea6b2b95df43d2ed641d97a93a4ecaa"
+    },
+    {
+      "path": "src/visualize_analysis.py",
+      "bytes": 7660,
+      "sha256": "f33423f68dd04b8d82f4fa0d4f9f490ace73f8374a8fdf435bef97a08aa65ba2"
+    }
+  ],
+  "environment_note": "The sandbox emitted an IPython history-database write warning. It did not affect analysis: the combined notebook executed all 17 code cells without error outputs and the pipeline recorded passed."
+}

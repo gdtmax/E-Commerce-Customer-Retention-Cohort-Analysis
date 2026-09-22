@@ -1,0 +1,19 @@
+{
+  "step": 10,
+  "validation": {
+    "invoice_sequences_and_interpurchase_gaps": true,
+    "every_customer_window_matches_python": true,
+    "repeat_denominators_and_timestamp_sensitivity": true,
+    "common_population_counts_nondecreasing": true,
+    "every_cohort_cell_matches_invoice_sets": true,
+    "month_zero_and_future_nulls": true,
+    "maturity_weighted_pooled_rates": true
+  },
+  "heatmap": {
+    "observed_cells_plotted": 231,
+    "masked_cells": 210,
+    "cohorts": 21,
+    "maximum_month_index": 20
+  },
+  "interpretation": "Gray is unobserved; every displayed numeric cell is independently validated. Repeat populations are separately labeled."
+}

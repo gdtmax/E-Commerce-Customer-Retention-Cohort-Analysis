@@ -1,0 +1,1331 @@
+{
+  "step": 5,
+  "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "source_rows": 1067371,
+  "purpose": "Raw-data audit; exposures are not cleaned sales or retention results",
+  "money_encoding": "Decimal strings in JSON; GBP. Candidate exposures use an explicit audit scenario: round to six decimals only where absolute raw-price deviation is <= 1e-9 GBP. Strict precision failures remain flagged; this is not an approved cleaning rule or final revenue.",
+  "database": "data/processed/retention.duckdb",
+  "results": {
+    "source_inventory": [
+      {
+        "source_sheet": "Year 2009-2010",
+        "rows": 525461,
+        "first_excel_row": 2,
+        "last_excel_row": 525462,
+        "distinct_row_numbers": 525461,
+        "first_timestamp": "2009-12-01T07:45:00",
+        "last_timestamp": "2010-12-09T20:01:00",
+        "workbook_hashes": 1
+      },
+      {
+        "source_sheet": "Year 2010-2011",
+        "rows": 541910,
+        "first_excel_row": 2,
+        "last_excel_row": 541911,
+        "distinct_row_numbers": 541910,
+        "first_timestamp": "2010-12-01T08:26:00",
+        "last_timestamp": "2011-12-09T12:50:00",
+        "workbook_hashes": 1
+      }
+    ],
+    "missing_fields": [
+      {
+        "field": "Invoice",
+        "missing_rows": 0
+      },
+      {
+        "field": "StockCode",
+        "missing_rows": 0
+      },
+      {
+        "field": "Description",
+        "missing_rows": 4382
+      },
+      {
+        "field": "Quantity",
+        "missing_rows": 0
+      },
+      {
+        "field": "InvoiceDate",
+        "missing_rows": 0
+      },
+      {
+        "field": "Price",
+        "missing_rows": 0
+      },
+      {
+        "field": "Customer ID",
+        "missing_rows": 243007
+      },
+      {
+        "field": "Country",
+        "missing_rows": 0
+      }
+    ],
+    "quality_flags": [
+      {
+        "raw_rows": 1067371,
+        "invalid_or_nonintegral_quantity_rows": 0,
+        "invalid_or_excess_precision_price_rows": 112879,
+        "invalid_date_rows": 0,
+        "malformed_customer_rows": 0,
+        "cancellation_prefix_rows": 19494,
+        "other_invoice_format_rows": 6,
+        "negative_quantity_rows": 22950,
+        "zero_quantity_rows": 0,
+        "negative_price_rows": 5,
+        "zero_price_rows": 6202,
+        "positive_quantity_cancellation_rows": 1,
+        "negative_quantity_without_c_prefix_rows": 3457,
+        "unknown_country_rows": 756,
+        "partial_final_month_rows": 25526,
+        "raw_repeated_rows_after_first": 34335,
+        "normalized_repeated_rows_after_first": 34335,
+        "distinct_invoice_ids": 53628,
+        "distinct_known_customers": 5942,
+        "distinct_stock_codes": 5131
+      }
+    ],
+    "price_precision_review": [
+      {
+        "price_precision_status": "exact_within_six_decimals",
+        "rows": 954492,
+        "maximum_absolute_review_delta_gbp": "0.000000000000000000",
+        "example_raw_price": "-11062.06"
+      },
+      {
+        "price_precision_status": "representation_noise_candidate",
+        "rows": 112879,
+        "maximum_absolute_review_delta_gbp": "0.000000000003000000",
+        "example_raw_price": "-38925.870000000003"
+      }
+    ],
+    "overlap_summary": [
+      {
+        "overlap_status": "identical",
+        "invoices": 1088,
+        "rows_both_versions": 45046,
+        "candidate_positive_gbp_both_versions": "877705.300000"
+      }
+    ],
+    "invoice_overlap": {
+      "rows": 2176,
+      "file": "data/processed/audit_invoice_overlap.csv",
+      "preview": [
+        {
+          "invoice_id": "536365",
+          "overlap_status": "identical",
+          "source_sheet": "Year 2009-2010",
+          "source_rows": 7,
+          "payload_hash": "475e0f4486005b16b1b9538a75da413b36e1819cba6c1cf6b1cbf42628b548c3",
+          "distinct_timestamps": 1,
+          "distinct_known_customers": 1,
+          "candidate_positive_gbp": "139.120000"
+        },
+        {
+          "invoice_id": "536365",
+          "overlap_status": "identical",
+          "source_sheet": "Year 2010-2011",
+          "source_rows": 7,
+          "payload_hash": "475e0f4486005b16b1b9538a75da413b36e1819cba6c1cf6b1cbf42628b548c3",
+          "distinct_timestamps": 1,
+          "distinct_known_customers": 1,
+          "candidate_positive_gbp": "139.120000"
+        },
+        {
+          "invoice_id": "536366",
+          "overlap_status": "identical",
+          "source_sheet": "Year 2009-2010",
+          "source_rows": 2,
+          "payload_hash": "e9ce049d9707530070e90b47d21292836ce9d6c18728b494b9449ab87223eb6d",
+          "distinct_timestamps": 1,
+          "distinct_known_customers": 1,
+          "candidate_positive_gbp": "22.200000"
+        },
+        {
+          "invoice_id": "536366",
+          "overlap_status": "identical",
+          "source_sheet": "Year 2010-2011",
+          "source_rows": 2,
+          "payload_hash": "e9ce049d9707530070e90b47d21292836ce9d6c18728b494b9449ab87223eb6d",
+          "distinct_timestamps": 1,
+          "distinct_known_customers": 1,
+          "candidate_positive_gbp": "22.200000"
+        },
+        {
+          "invoice_id": "536367",
+          "overlap_status": "identical",
+          "source_sheet": "Year 2009-2010",
+          "source_rows": 12,
+          "payload_hash": "d856f2a5d2d62c89517fd23f12a090b3ca8dd79663a75a79d88494e50773e740",
+          "distinct_timestamps": 1,
+          "distinct_known_customers": 1,
+          "candidate_positive_gbp": "278.730000"
+        },
+        {
+          "invoice_id": "536367",
+          "overlap_status": "identical",
+          "source_sheet": "Year 2010-2011",
+          "source_rows": 12,
+          "payload_hash": "d856f2a5d2d62c89517fd23f12a090b3ca8dd79663a75a79d88494e50773e740",
+          "distinct_timestamps": 1,
+          "distinct_known_customers": 1,
+          "candidate_positive_gbp": "278.730000"
+        },
+        {
+          "invoice_id": "536368",
+          "overlap_status": "identical",
+          "source_sheet": "Year 2009-2010",
+          "source_rows": 4,
+          "payload_hash": "3fbd2e3915a03a1faf8ca7fa5edd859cc9e1f4b82685d9c73d3c9be21cac4a69",
+          "distinct_timestamps": 1,
+          "distinct_known_customers": 1,
+          "candidate_positive_gbp": "70.050000"
+        },
+        {
+          "invoice_id": "536368",
+          "overlap_status": "identical",
+          "source_sheet": "Year 2010-2011",
+          "source_rows": 4,
+          "payload_hash": "3fbd2e3915a03a1faf8ca7fa5edd859cc9e1f4b82685d9c73d3c9be21cac4a69",
+          "distinct_timestamps": 1,
+          "distinct_known_customers": 1,
+          "candidate_positive_gbp": "70.050000"
+        },
+        {
+          "invoice_id": "536369",
+          "overlap_status": "identical",
+          "source_sheet": "Year 2009-2010",
+          "source_rows": 1,
+          "payload_hash": "7cc47e092c692c26016c6fe9eccb5962f8a0968bd471ce0a16024c9b2603c681",
+          "distinct_timestamps": 1,
+          "distinct_known_customers": 1,
+          "candidate_positive_gbp": "17.850000"
+        },
+        {
+          "invoice_id": "536369",
+          "overlap_status": "identical",
+          "source_sheet": "Year 2010-2011",
+          "source_rows": 1,
+          "payload_hash": "7cc47e092c692c26016c6fe9eccb5962f8a0968bd471ce0a16024c9b2603c681",
+          "distinct_timestamps": 1,
+          "distinct_known_customers": 1,
+          "candidate_positive_gbp": "17.850000"
+        }
+      ]
+    },
+    "proposed_dispositions": [
+      {
+        "proposed_disposition": "exclude_older_overlap_copy",
+        "rows": 22523,
+        "candidate_positive_gbp_all_dates": "438852.650000",
+        "candidate_positive_gbp_main_period": "438852.650000"
+      },
+      {
+        "proposed_disposition": "exclude_within_version_duplicate",
+        "rows": 11812,
+        "candidate_positive_gbp_all_dates": "57481.470000",
+        "candidate_positive_gbp_main_period": "56479.120000"
+      },
+      {
+        "proposed_disposition": "retain_for_step_6_review",
+        "rows": 1033036,
+        "candidate_positive_gbp_all_dates": "20465198.388000",
+        "candidate_positive_gbp_main_period": "19827390.058000"
+      }
+    ],
+    "header_summary": [
+      {
+        "invoice_versions": 54716,
+        "multiple_timestamp_versions": 84,
+        "multiple_customer_versions": 0,
+        "multiple_country_versions": 0,
+        "unidentified_versions": 8939,
+        "versions_with_inheritable_missing_ids": 0
+      }
+    ],
+    "header_issues": {
+      "rows": 84,
+      "file": "data/processed/audit_header_issues.csv",
+      "preview": [
+        {
+          "source_sheet": "Year 2009-2010",
+          "invoice_id": "492807",
+          "payload_hash": "6773ec191ea46e591738aa13aad750c579e960e46052765f5ab7b97ad830fe41",
+          "source_rows": 30,
+          "distinct_timestamps": 2,
+          "invalid_date_rows": 0,
+          "distinct_known_customers": 1,
+          "missing_or_invalid_customer_rows": 0,
+          "invalid_customer_rows": 0,
+          "distinct_known_countries": 1,
+          "candidate_positive_gbp": "342.820000"
+        },
+        {
+          "source_sheet": "Year 2009-2010",
+          "invoice_id": "494166",
+          "payload_hash": "85a718fdacbd4cabbc805ba66dfc13a0e105e74405a44555fc5d00785c59484b",
+          "source_rows": 240,
+          "distinct_timestamps": 2,
+          "invalid_date_rows": 0,
+          "distinct_known_customers": 0,
+          "missing_or_invalid_customer_rows": 240,
+          "invalid_customer_rows": 0,
+          "distinct_known_countries": 1,
+          "candidate_positive_gbp": "1923.200000"
+        },
+        {
+          "source_sheet": "Year 2009-2010",
+          "invoice_id": "499967",
+          "payload_hash": "4f6c34808a11dd4d2bf4767b28cf94ae1abe8cd9f276715a178743fa5a37bce1",
+          "source_rows": 31,
+          "distinct_timestamps": 2,
+          "invalid_date_rows": 0,
+          "distinct_known_customers": 1,
+          "missing_or_invalid_customer_rows": 0,
+          "invalid_customer_rows": 0,
+          "distinct_known_countries": 1,
+          "candidate_positive_gbp": "1311.450000"
+        },
+        {
+          "source_sheet": "Year 2009-2010",
+          "invoice_id": "500353",
+          "payload_hash": "287cd2023781c6b6902481076e87bcafffaaa8dcd58d42ff7ba6d631d3e88402",
+          "source_rows": 110,
+          "distinct_timestamps": 2,
+          "invalid_date_rows": 0,
+          "distinct_known_customers": 1,
+          "missing_or_invalid_customer_rows": 0,
+          "invalid_customer_rows": 0,
+          "distinct_known_countries": 1,
+          "candidate_positive_gbp": "1966.840000"
+        },
+        {
+          "source_sheet": "Year 2009-2010",
+          "invoice_id": "500827",
+          "payload_hash": "2d3898633d58df6c1b553deafe1863d1a9dc61130d4452e7fd4793374558661d",
+          "source_rows": 213,
+          "distinct_timestamps": 2,
+          "invalid_date_rows": 0,
+          "distinct_known_customers": 0,
+          "missing_or_invalid_customer_rows": 213,
+          "invalid_customer_rows": 0,
+          "distinct_known_countries": 1,
+          "candidate_positive_gbp": "2163.040000"
+        },
+        {
+          "source_sheet": "Year 2009-2010",
+          "invoice_id": "501618",
+          "payload_hash": "b95295a0ebd5defd48003372d43e7589af69ed3f0d0dadaff3eb181c9df9d0c1",
+          "source_rows": 19,
+          "distinct_timestamps": 2,
+          "invalid_date_rows": 0,
+          "distinct_known_customers": 1,
+          "missing_or_invalid_customer_rows": 0,
+          "invalid_customer_rows": 0,
+          "distinct_known_countries": 1,
+          "candidate_positive_gbp": "296.420000"
+        },
+        {
+          "source_sheet": "Year 2009-2010",
+          "invoice_id": "501871",
+          "payload_hash": "31504a828332084bd2a4d040bc4491d508314530985f81a7f67ffca0806c222f",
+          "source_rows": 15,
+          "distinct_timestamps": 2,
+          "invalid_date_rows": 0,
+          "distinct_known_customers": 1,
+          "missing_or_invalid_customer_rows": 0,
+          "invalid_customer_rows": 0,
+          "distinct_known_countries": 1,
+          "candidate_positive_gbp": "658.000000"
+        },
+        {
+          "source_sheet": "Year 2009-2010",
+          "invoice_id": "503609",
+          "payload_hash": "b319cdf05110c3809363d2f9a5149fa9a943f522a4534278ce9e65d8cc6ce5e2",
+          "source_rows": 10,
+          "distinct_timestamps": 2,
+          "invalid_date_rows": 0,
+          "distinct_known_customers": 1,
+          "missing_or_invalid_customer_rows": 0,
+          "invalid_customer_rows": 0,
+          "distinct_known_countries": 1,
+          "candidate_positive_gbp": "819.420000"
+        },
+        {
+          "source_sheet": "Year 2009-2010",
+          "invoice_id": "505791",
+          "payload_hash": "1a408be333df40d87ed37de98505eac8fb39b747012374e274e06a6909e5e885",
+          "source_rows": 51,
+          "distinct_timestamps": 2,
+          "invalid_date_rows": 0,
+          "distinct_known_customers": 1,
+          "missing_or_invalid_customer_rows": 0,
+          "invalid_customer_rows": 0,
+          "distinct_known_countries": 1,
+          "candidate_positive_gbp": "238.610000"
+        },
+        {
+          "source_sheet": "Year 2009-2010",
+          "invoice_id": "509851",
+          "payload_hash": "58b4ae9f083fb83317f1a317c6fbcaac545306fae24c7dbf13ddceb319e51b19",
+          "source_rows": 69,
+          "distinct_timestamps": 2,
+          "invalid_date_rows": 0,
+          "distinct_known_customers": 1,
+          "missing_or_invalid_customer_rows": 0,
+          "invalid_customer_rows": 0,
+          "distinct_known_countries": 1,
+          "candidate_positive_gbp": "1389.260000"
+        }
+      ]
+    },
+    "retained_review_exposure": [
+      {
+        "rows_after_proposed_overlap_and_duplicate_handling": 1007789,
+        "rows_in_header_conflicts": 5721,
+        "header_conflict_candidate_gbp": "98126.330000",
+        "candidate_positive_gbp": "19827390.058000",
+        "unidentified_candidate_gbp": "2969794.230000",
+        "rows_in_unidentified_invoices": 227287
+      }
+    ],
+    "monthly_coverage": [
+      {
+        "month": "2009-12",
+        "source_rows": 45228,
+        "observed_days": 21,
+        "first_timestamp": "2009-12-01T07:45:00",
+        "last_timestamp": "2009-12-23T16:58:00",
+        "missing_or_invalid_customer_rows": 13468
+      },
+      {
+        "month": "2010-01",
+        "source_rows": 31555,
+        "observed_days": 24,
+        "first_timestamp": "2010-01-04T09:24:00",
+        "last_timestamp": "2010-01-31T16:02:00",
+        "missing_or_invalid_customer_rows": 9116
+      },
+      {
+        "month": "2010-02",
+        "source_rows": 29388,
+        "observed_days": 24,
+        "first_timestamp": "2010-02-01T08:13:00",
+        "last_timestamp": "2010-02-28T16:16:00",
+        "missing_or_invalid_customer_rows": 5482
+      },
+      {
+        "month": "2010-03",
+        "source_rows": 41511,
+        "observed_days": 27,
+        "first_timestamp": "2010-03-01T08:38:00",
+        "last_timestamp": "2010-03-31T17:53:00",
+        "missing_or_invalid_customer_rows": 8397
+      },
+      {
+        "month": "2010-04",
+        "source_rows": 34057,
+        "observed_days": 23,
+        "first_timestamp": "2010-04-01T07:49:00",
+        "last_timestamp": "2010-04-30T17:33:00",
+        "missing_or_invalid_customer_rows": 6224
+      },
+      {
+        "month": "2010-05",
+        "source_rows": 35323,
+        "observed_days": 24,
+        "first_timestamp": "2010-05-02T10:22:00",
+        "last_timestamp": "2010-05-30T15:58:00",
+        "missing_or_invalid_customer_rows": 5719
+      },
+      {
+        "month": "2010-06",
+        "source_rows": 39983,
+        "observed_days": 26,
+        "first_timestamp": "2010-06-01T09:02:00",
+        "last_timestamp": "2010-06-30T17:38:00",
+        "missing_or_invalid_customer_rows": 8033
+      },
+      {
+        "month": "2010-07",
+        "source_rows": 33383,
+        "observed_days": 26,
+        "first_timestamp": "2010-07-01T08:39:00",
+        "last_timestamp": "2010-07-30T17:08:00",
+        "missing_or_invalid_customer_rows": 5637
+      },
+      {
+        "month": "2010-08",
+        "source_rows": 33306,
+        "observed_days": 26,
+        "first_timestamp": "2010-08-01T10:04:00",
+        "last_timestamp": "2010-08-31T17:44:00",
+        "missing_or_invalid_customer_rows": 6364
+      },
+      {
+        "month": "2010-09",
+        "source_rows": 42091,
+        "observed_days": 26,
+        "first_timestamp": "2010-09-01T09:22:00",
+        "last_timestamp": "2010-09-30T20:11:00",
+        "missing_or_invalid_customer_rows": 6705
+      },
+      {
+        "month": "2010-10",
+        "source_rows": 59098,
+        "observed_days": 26,
+        "first_timestamp": "2010-10-01T08:19:00",
+        "last_timestamp": "2010-10-31T16:26:00",
+        "missing_or_invalid_customer_rows": 8537
+      },
+      {
+        "month": "2010-11",
+        "source_rows": 78015,
+        "observed_days": 26,
+        "first_timestamp": "2010-11-01T08:56:00",
+        "last_timestamp": "2010-11-30T19:35:00",
+        "missing_or_invalid_customer_rows": 16525
+      },
+      {
+        "month": "2010-12",
+        "source_rows": 65004,
+        "observed_days": 20,
+        "first_timestamp": "2010-12-01T08:26:00",
+        "last_timestamp": "2010-12-23T17:41:00",
+        "missing_or_invalid_customer_rows": 23351
+      },
+      {
+        "month": "2011-01",
+        "source_rows": 35147,
+        "observed_days": 24,
+        "first_timestamp": "2011-01-04T10:00:00",
+        "last_timestamp": "2011-01-31T16:59:00",
+        "missing_or_invalid_customer_rows": 13235
+      },
+      {
+        "month": "2011-02",
+        "source_rows": 27707,
+        "observed_days": 24,
+        "first_timestamp": "2011-02-01T08:23:00",
+        "last_timestamp": "2011-02-28T17:04:00",
+        "missing_or_invalid_customer_rows": 7344
+      },
+      {
+        "month": "2011-03",
+        "source_rows": 36748,
+        "observed_days": 27,
+        "first_timestamp": "2011-03-01T08:30:00",
+        "last_timestamp": "2011-03-31T19:55:00",
+        "missing_or_invalid_customer_rows": 8926
+      },
+      {
+        "month": "2011-04",
+        "source_rows": 29916,
+        "observed_days": 21,
+        "first_timestamp": "2011-04-01T08:22:00",
+        "last_timestamp": "2011-04-28T19:53:00",
+        "missing_or_invalid_customer_rows": 6718
+      },
+      {
+        "month": "2011-05",
+        "source_rows": 37030,
+        "observed_days": 25,
+        "first_timestamp": "2011-05-01T10:51:00",
+        "last_timestamp": "2011-05-31T15:53:00",
+        "missing_or_invalid_customer_rows": 8122
+      },
+      {
+        "month": "2011-06",
+        "source_rows": 36874,
+        "observed_days": 26,
+        "first_timestamp": "2011-06-01T07:37:00",
+        "last_timestamp": "2011-06-30T20:08:00",
+        "missing_or_invalid_customer_rows": 9038
+      },
+      {
+        "month": "2011-07",
+        "source_rows": 39518,
+        "observed_days": 26,
+        "first_timestamp": "2011-07-01T08:16:00",
+        "last_timestamp": "2011-07-31T16:04:00",
+        "missing_or_invalid_customer_rows": 12016
+      },
+      {
+        "month": "2011-08",
+        "source_rows": 35284,
+        "observed_days": 26,
+        "first_timestamp": "2011-08-01T08:30:00",
+        "last_timestamp": "2011-08-31T17:45:00",
+        "missing_or_invalid_customer_rows": 7622
+      },
+      {
+        "month": "2011-09",
+        "source_rows": 50226,
+        "observed_days": 26,
+        "first_timestamp": "2011-09-01T08:25:00",
+        "last_timestamp": "2011-09-30T17:22:00",
+        "missing_or_invalid_customer_rows": 9404
+      },
+      {
+        "month": "2011-10",
+        "source_rows": 60742,
+        "observed_days": 26,
+        "first_timestamp": "2011-10-02T10:32:00",
+        "last_timestamp": "2011-10-31T17:19:00",
+        "missing_or_invalid_customer_rows": 10047
+      },
+      {
+        "month": "2011-11",
+        "source_rows": 84711,
+        "observed_days": 26,
+        "first_timestamp": "2011-11-01T08:16:00",
+        "last_timestamp": "2011-11-30T17:42:00",
+        "missing_or_invalid_customer_rows": 19113
+      },
+      {
+        "month": "2011-12",
+        "source_rows": 25526,
+        "observed_days": 8,
+        "first_timestamp": "2011-12-01T08:12:00",
+        "last_timestamp": "2011-12-09T12:50:00",
+        "missing_or_invalid_customer_rows": 7864
+      }
+    ],
+    "date_gaps": {
+      "rows": 108,
+      "file": "data/processed/audit_date_gaps.csv",
+      "preview": [
+        {
+          "gap_start": "2009-12-24",
+          "gap_end": "2010-01-03",
+          "days_without_records": 11
+        },
+        {
+          "gap_start": "2010-12-24",
+          "gap_end": "2011-01-03",
+          "days_without_records": 11
+        },
+        {
+          "gap_start": "2010-04-02",
+          "gap_end": "2010-04-05",
+          "days_without_records": 4
+        },
+        {
+          "gap_start": "2011-04-22",
+          "gap_end": "2011-04-25",
+          "days_without_records": 4
+        },
+        {
+          "gap_start": "2011-04-29",
+          "gap_end": "2011-04-30",
+          "days_without_records": 2
+        },
+        {
+          "gap_start": "2009-12-12",
+          "gap_end": "2009-12-12",
+          "days_without_records": 1
+        },
+        {
+          "gap_start": "2009-12-19",
+          "gap_end": "2009-12-19",
+          "days_without_records": 1
+        },
+        {
+          "gap_start": "2010-01-09",
+          "gap_end": "2010-01-09",
+          "days_without_records": 1
+        },
+        {
+          "gap_start": "2010-01-16",
+          "gap_end": "2010-01-16",
+          "days_without_records": 1
+        },
+        {
+          "gap_start": "2010-01-23",
+          "gap_end": "2010-01-23",
+          "days_without_records": 1
+        }
+      ]
+    },
+    "weekday_coverage": [
+      {
+        "weekday_sunday_zero": 0,
+        "observed_dates": 99
+      },
+      {
+        "weekday_sunday_zero": 1,
+        "observed_dates": 94
+      },
+      {
+        "weekday_sunday_zero": 2,
+        "observed_dates": 104
+      },
+      {
+        "weekday_sunday_zero": 3,
+        "observed_dates": 104
+      },
+      {
+        "weekday_sunday_zero": 4,
+        "observed_dates": 103
+      },
+      {
+        "weekday_sunday_zero": 5,
+        "observed_dates": 99
+      },
+      {
+        "weekday_sunday_zero": 6,
+        "observed_dates": 1
+      }
+    ],
+    "product_codes": {
+      "rows": 5131,
+      "file": "data/processed/audit_product_codes.csv",
+      "preview": [
+        {
+          "stock_code": "10002",
+          "source_rows": 400,
+          "distinct_descriptions": 1,
+          "observed_descriptions": "INFLATABLE POLITICAL GLOBE",
+          "standard_code_shape": true,
+          "missing_description_rows": 2,
+          "candidate_positive_gbp_raw": "7097.900000",
+          "candidate_known_customers": 164
+        },
+        {
+          "stock_code": "10002R",
+          "source_rows": 3,
+          "distinct_descriptions": 1,
+          "observed_descriptions": "ROBOT PENCIL SHARPNER",
+          "standard_code_shape": true,
+          "missing_description_rows": 0,
+          "candidate_positive_gbp_raw": "20.570000",
+          "candidate_known_customers": 0
+        },
+        {
+          "stock_code": "10080",
+          "source_rows": 31,
+          "distinct_descriptions": 2,
+          "observed_descriptions": "GROOVY CACTUS INFLATABLE | check",
+          "standard_code_shape": true,
+          "missing_description_rows": 2,
+          "candidate_positive_gbp_raw": "129.290000",
+          "candidate_known_customers": 23
+        },
+        {
+          "stock_code": "10109",
+          "source_rows": 2,
+          "distinct_descriptions": 1,
+          "observed_descriptions": "BENDY COLOUR PENCILS",
+          "standard_code_shape": true,
+          "missing_description_rows": 1,
+          "candidate_positive_gbp_raw": "1.680000",
+          "candidate_known_customers": 1
+        },
+        {
+          "stock_code": "10120",
+          "source_rows": 79,
+          "distinct_descriptions": 2,
+          "observed_descriptions": "DOGGY RUBBER | Zebra invcing error",
+          "standard_code_shape": true,
+          "missing_description_rows": 0,
+          "candidate_positive_gbp_raw": "146.100000",
+          "candidate_known_customers": 52
+        },
+        {
+          "stock_code": "10123C",
+          "source_rows": 71,
+          "distinct_descriptions": 1,
+          "observed_descriptions": "HEARTS WRAPPING TAPE",
+          "standard_code_shape": true,
+          "missing_description_rows": 2,
+          "candidate_positive_gbp_raw": "257.010000",
+          "candidate_known_customers": 39
+        },
+        {
+          "stock_code": "10123G",
+          "source_rows": 21,
+          "distinct_descriptions": 1,
+          "observed_descriptions": "ARMY CAMO WRAPPING TAPE",
+          "standard_code_shape": true,
+          "missing_description_rows": 3,
+          "candidate_positive_gbp_raw": "165.560000",
+          "candidate_known_customers": 12
+        },
+        {
+          "stock_code": "10124A",
+          "source_rows": 20,
+          "distinct_descriptions": 1,
+          "observed_descriptions": "SPOTS ON RED BOOKCOVER TAPE",
+          "standard_code_shape": true,
+          "missing_description_rows": 1,
+          "candidate_positive_gbp_raw": "26.040000",
+          "candidate_known_customers": 18
+        },
+        {
+          "stock_code": "10124C",
+          "source_rows": 1,
+          "distinct_descriptions": 0,
+          "observed_descriptions": null,
+          "standard_code_shape": true,
+          "missing_description_rows": 1,
+          "candidate_positive_gbp_raw": "0.000000",
+          "candidate_known_customers": 0
+        },
+        {
+          "stock_code": "10124G",
+          "source_rows": 11,
+          "distinct_descriptions": 1,
+          "observed_descriptions": "ARMY CAMO BOOKCOVER TAPE",
+          "standard_code_shape": true,
+          "missing_description_rows": 0,
+          "candidate_positive_gbp_raw": "16.380000",
+          "candidate_known_customers": 9
+        }
+      ]
+    },
+    "special_codes": [
+      {
+        "stock_code": "M",
+        "source_rows": 1426,
+        "observed_descriptions": "Manual",
+        "candidate_positive_gbp_raw": "340731.330000"
+      },
+      {
+        "stock_code": "DOT",
+        "source_rows": 1446,
+        "observed_descriptions": "DOTCOM POSTAGE",
+        "candidate_positive_gbp_raw": "322657.480000"
+      },
+      {
+        "stock_code": "POST",
+        "source_rows": 2122,
+        "observed_descriptions": "POSTAGE",
+        "candidate_positive_gbp_raw": "127597.420000"
+      },
+      {
+        "stock_code": "AMAZONFEE",
+        "source_rows": 43,
+        "observed_descriptions": "AMAZON FEE",
+        "candidate_positive_gbp_raw": "34009.130000"
+      },
+      {
+        "stock_code": "C2",
+        "source_rows": 282,
+        "observed_descriptions": "CARRIAGE",
+        "candidate_positive_gbp_raw": "13676.000000"
+      },
+      {
+        "stock_code": "ADJUST",
+        "source_rows": 67,
+        "observed_descriptions": "Adjustment by Peter on 24/05/2010 1 | Adjustment by john on 26/01/2010 16 | Adjustment by john on 26/01/2010 17",
+        "candidate_positive_gbp_raw": "8897.930000"
+      },
+      {
+        "stock_code": "ADJUST2",
+        "source_rows": 3,
+        "observed_descriptions": "Adjustment by Peter on Jun 25 2010",
+        "candidate_positive_gbp_raw": "731.050000"
+      },
+      {
+        "stock_code": "GIFT_0001_30",
+        "source_rows": 29,
+        "observed_descriptions": "Dotcomgiftshop Gift Voucher \u00a330.00",
+        "candidate_positive_gbp_raw": "610.090000"
+      },
+      {
+        "stock_code": "BANK CHARGES",
+        "source_rows": 102,
+        "observed_descriptions": "Bank Charges",
+        "candidate_positive_gbp_raw": "534.241000"
+      },
+      {
+        "stock_code": "GIFT_0001_20",
+        "source_rows": 29,
+        "observed_descriptions": "Dotcomgiftshop Gift Voucher \u00a320.00 | to push order througha s stock was",
+        "candidate_positive_gbp_raw": "471.060000"
+      },
+      {
+        "stock_code": "D",
+        "source_rows": 177,
+        "observed_descriptions": "Discount",
+        "candidate_positive_gbp_raw": "397.890000"
+      },
+      {
+        "stock_code": "DCGSSGIRL",
+        "source_rows": 25,
+        "observed_descriptions": "GIRLS PARTY BAG | update",
+        "candidate_positive_gbp_raw": "295.630000"
+      },
+      {
+        "stock_code": "DCGS0076",
+        "source_rows": 15,
+        "observed_descriptions": "SUNJAR LED NIGHT NIGHT LIGHT",
+        "candidate_positive_gbp_raw": "292.090000"
+      },
+      {
+        "stock_code": "GIFT_0001_50",
+        "source_rows": 8,
+        "observed_descriptions": "Dotcomgiftshop Gift Voucher \u00a350.00",
+        "candidate_positive_gbp_raw": "253.590000"
+      },
+      {
+        "stock_code": "DCGSSBOY",
+        "source_rows": 23,
+        "observed_descriptions": "BOYS PARTY BAG | update",
+        "candidate_positive_gbp_raw": "251.350000"
+      },
+      {
+        "stock_code": "TEST001",
+        "source_rows": 15,
+        "observed_descriptions": "This is a test product.",
+        "candidate_positive_gbp_raw": "225.000000"
+      },
+      {
+        "stock_code": "GIFT_0001_40",
+        "source_rows": 7,
+        "observed_descriptions": "Dotcomgiftshop Gift Voucher \u00a340.00",
+        "candidate_positive_gbp_raw": "166.090000"
+      },
+      {
+        "stock_code": "S",
+        "source_rows": 104,
+        "observed_descriptions": "SAMPLES",
+        "candidate_positive_gbp_raw": "136.850000"
+      },
+      {
+        "stock_code": "GIFT_0001_10",
+        "source_rows": 16,
+        "observed_descriptions": "Dotcomgiftshop Gift Voucher \u00a310.00",
+        "candidate_positive_gbp_raw": "126.210000"
+      },
+      {
+        "stock_code": "DCGS0069",
+        "source_rows": 6,
+        "observed_descriptions": "OOH LA LA DOGS COLLAR | ebay",
+        "candidate_positive_gbp_raw": "80.310000"
+      },
+      {
+        "stock_code": "GIFT_0001_80",
+        "source_rows": 4,
+        "observed_descriptions": "Dotcomgiftshop Gift Voucher \u00a380.00",
+        "candidate_positive_gbp_raw": "69.560000"
+      },
+      {
+        "stock_code": "DCGS0004",
+        "source_rows": 5,
+        "observed_descriptions": "HAYNES CAMPER SHOULDER BAG",
+        "candidate_positive_gbp_raw": "67.940000"
+      },
+      {
+        "stock_code": "GIFT_0001_70",
+        "source_rows": 3,
+        "observed_descriptions": "Dotcomgiftshop Gift Voucher \u00a370.00",
+        "candidate_positive_gbp_raw": "59.570000"
+      },
+      {
+        "stock_code": "DCGS0058",
+        "source_rows": 31,
+        "observed_descriptions": "MISO PRETTY  GUM",
+        "candidate_positive_gbp_raw": "34.820000"
+      },
+      {
+        "stock_code": "DCGS0003",
+        "source_rows": 14,
+        "observed_descriptions": "BOXED GLASS ASHTRAY | ebay",
+        "candidate_positive_gbp_raw": "32.590000"
+      },
+      {
+        "stock_code": "DCGS0070",
+        "source_rows": 3,
+        "observed_descriptions": "CAMOUFLAGE DOG COLLAR",
+        "candidate_positive_gbp_raw": "25.440000"
+      },
+      {
+        "stock_code": "DCGS0072",
+        "source_rows": 4,
+        "observed_descriptions": "CAT CAMOUFLAGUE COLLAR",
+        "candidate_positive_gbp_raw": "20.680000"
+      },
+      {
+        "stock_code": "DCGS0066N",
+        "source_rows": 4,
+        "observed_descriptions": "NAVY CUDDLES DOG HOODIE",
+        "candidate_positive_gbp_raw": "17.300000"
+      },
+      {
+        "stock_code": "DCGS0068",
+        "source_rows": 3,
+        "observed_descriptions": "DOGS NIGHT COLLAR | ebay",
+        "candidate_positive_gbp_raw": "17.120000"
+      },
+      {
+        "stock_code": "SP1002",
+        "source_rows": 3,
+        "observed_descriptions": "KID'S CHALKBOARD/EASEL",
+        "candidate_positive_gbp_raw": "14.750000"
+      },
+      {
+        "stock_code": "DCGS0037",
+        "source_rows": 2,
+        "observed_descriptions": "KEY-RING CORKSCREW",
+        "candidate_positive_gbp_raw": "12.720000"
+      },
+      {
+        "stock_code": "DCGS0075",
+        "source_rows": 1,
+        "observed_descriptions": "CAMOUFLAGUE DOG LEAD",
+        "candidate_positive_gbp_raw": "12.720000"
+      },
+      {
+        "stock_code": "DCGS0041",
+        "source_rows": 1,
+        "observed_descriptions": "HAYNES MINI-COOPER PLAYING CARDS",
+        "candidate_positive_gbp_raw": "5.060000"
+      },
+      {
+        "stock_code": "DCGS0044",
+        "source_rows": 1,
+        "observed_descriptions": "HANDZ-OFF CAR FRESHENER",
+        "candidate_positive_gbp_raw": "2.570000"
+      },
+      {
+        "stock_code": "DCGS0062",
+        "source_rows": 2,
+        "observed_descriptions": "ROAD-RAGE CAR FRESHENER",
+        "candidate_positive_gbp_raw": "2.510000"
+      },
+      {
+        "stock_code": "TEST002",
+        "source_rows": 2,
+        "observed_descriptions": "This is a test product.",
+        "candidate_positive_gbp_raw": "1.000000"
+      },
+      {
+        "stock_code": "PADS",
+        "source_rows": 19,
+        "observed_descriptions": "PADS TO MATCH ALL CUSHIONS",
+        "candidate_positive_gbp_raw": "0.017000"
+      },
+      {
+        "stock_code": "B",
+        "source_rows": 6,
+        "observed_descriptions": "Adjust bad debt",
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "C3",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "CRUK",
+        "source_rows": 16,
+        "observed_descriptions": "CRUK Commission",
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0006",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0016",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0027",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0036",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0039",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0053",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0055",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0056",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0057",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0059",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0060",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0066P",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0067",
+        "source_rows": 1,
+        "observed_descriptions": "ebay",
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0071",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0073",
+        "source_rows": 1,
+        "observed_descriptions": "ebay",
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGS0074",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGSLBOY",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "DCGSLGIRL",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "GIFT",
+        "source_rows": 1,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "GIFT_0001_60",
+        "source_rows": 2,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      },
+      {
+        "stock_code": "GIFT_0001_90",
+        "source_rows": 2,
+        "observed_descriptions": null,
+        "candidate_positive_gbp_raw": "0.000000"
+      }
+    ],
+    "product_consistency": [
+      {
+        "codes_with_multiple_descriptions": 1192,
+        "codes_without_any_description": 353
+      }
+    ],
+    "customer_country_consistency": [
+      {
+        "known_customers": 5942,
+        "customers_with_multiple_known_countries": 13
+      }
+    ],
+    "amount_distribution": [
+      {
+        "minimum_quantity": -80995,
+        "maximum_quantity": 80995,
+        "minimum_unit_price_gbp": "-53594.360000",
+        "maximum_unit_price_gbp": "38970.000000",
+        "positive_quantity_p99": 108.0,
+        "positive_price_p99": "18.220000",
+        "largest_raw_positive_line_gbp": "168469.600000"
+      }
+    ],
+    "outlier_lines": {
+      "rows": 30,
+      "file": "data/processed/audit_outlier_lines.csv",
+      "preview": [
+        {
+          "source_sheet": "Year 2010-2011",
+          "source_row_number": 540423,
+          "invoice_id": "581483",
+          "stock_code": "23843",
+          "description": "PAPER CRAFT , LITTLE BIRDIE",
+          "quantity": 80995,
+          "raw_price": "2.08",
+          "unit_price_gbp": "2.080000",
+          "review_unit_price_gbp": "2.080000",
+          "invoice_timestamp": "2011-12-09T09:15:00",
+          "customer_id": "16446",
+          "candidate_positive_gbp": "168469.600000"
+        },
+        {
+          "source_sheet": "Year 2010-2011",
+          "source_row_number": 540424,
+          "invoice_id": "C581484",
+          "stock_code": "23843",
+          "description": "PAPER CRAFT , LITTLE BIRDIE",
+          "quantity": -80995,
+          "raw_price": "2.08",
+          "unit_price_gbp": "2.080000",
+          "review_unit_price_gbp": "2.080000",
+          "invoice_timestamp": "2011-12-09T09:27:00",
+          "customer_id": "16446",
+          "candidate_positive_gbp": "0.000000"
+        },
+        {
+          "source_sheet": "Year 2010-2011",
+          "source_row_number": 61621,
+          "invoice_id": "541431",
+          "stock_code": "23166",
+          "description": "MEDIUM CERAMIC TOP STORAGE JAR",
+          "quantity": 74215,
+          "raw_price": "1.04",
+          "unit_price_gbp": "1.040000",
+          "review_unit_price_gbp": "1.040000",
+          "invoice_timestamp": "2011-01-18T10:01:00",
+          "customer_id": "12346",
+          "candidate_positive_gbp": "77183.600000"
+        },
+        {
+          "source_sheet": "Year 2010-2011",
+          "source_row_number": 61626,
+          "invoice_id": "C541433",
+          "stock_code": "23166",
+          "description": "MEDIUM CERAMIC TOP STORAGE JAR",
+          "quantity": -74215,
+          "raw_price": "1.04",
+          "unit_price_gbp": "1.040000",
+          "review_unit_price_gbp": "1.040000",
+          "invoice_timestamp": "2011-01-18T10:17:00",
+          "customer_id": "12346",
+          "candidate_positive_gbp": "0.000000"
+        },
+        {
+          "source_sheet": "Year 2009-2010",
+          "source_row_number": 179405,
+          "invoice_id": "A506401",
+          "stock_code": "B",
+          "description": "Adjust bad debt",
+          "quantity": 1,
+          "raw_price": "-53594.36",
+          "unit_price_gbp": "-53594.360000",
+          "review_unit_price_gbp": "-53594.360000",
+          "invoice_timestamp": "2010-04-29T13:36:00",
+          "customer_id": null,
+          "candidate_positive_gbp": "0.000000"
+        },
+        {
+          "source_sheet": "Year 2009-2010",
+          "source_row_number": 276276,
+          "invoice_id": "A516228",
+          "stock_code": "B",
+          "description": "Adjust bad debt",
+          "quantity": 1,
+          "raw_price": "-44031.79",
+          "unit_price_gbp": "-44031.790000",
+          "review_unit_price_gbp": "-44031.790000",
+          "invoice_timestamp": "2010-07-19T11:24:00",
+          "customer_id": null,
+          "candidate_positive_gbp": "0.000000"
+        },
+        {
+          "source_sheet": "Year 2010-2011",
+          "source_row_number": 222673,
+          "invoice_id": "556444",
+          "stock_code": "22502",
+          "description": "PICNIC BASKET WICKER 60 PIECES",
+          "quantity": 60,
+          "raw_price": "649.5",
+          "unit_price_gbp": "649.500000",
+          "review_unit_price_gbp": "649.500000",
+          "invoice_timestamp": "2011-06-10T15:28:00",
+          "customer_id": "15098",
+          "candidate_positive_gbp": "38970.000000"
+        },
+        {
+          "source_sheet": "Year 2010-2011",
+          "source_row_number": 222683,
+          "invoice_id": "C556445",
+          "stock_code": "M",
+          "description": "Manual",
+          "quantity": -1,
+          "raw_price": "38970",
+          "unit_price_gbp": "38970.000000",
+          "review_unit_price_gbp": "38970.000000",
+          "invoice_timestamp": "2011-06-10T15:31:00",
+          "customer_id": "15098",
+          "candidate_positive_gbp": "0.000000"
+        },
+        {
+          "source_sheet": "Year 2009-2010",
+          "source_row_number": 403474,
+          "invoice_id": "A528059",
+          "stock_code": "B",
+          "description": "Adjust bad debt",
+          "quantity": 1,
+          "raw_price": "-38925.870000000003",
+          "unit_price_gbp": null,
+          "review_unit_price_gbp": "-38925.870000",
+          "invoice_timestamp": "2010-10-20T12:04:00",
+          "customer_id": null,
+          "candidate_positive_gbp": "0.000000"
+        },
+        {
+          "source_sheet": "Year 2009-2010",
+          "source_row_number": 241826,
+          "invoice_id": "C512770",
+          "stock_code": "M",
+          "description": "Manual",
+          "quantity": -1,
+          "raw_price": "25111.09",
+          "unit_price_gbp": "25111.090000",
+          "review_unit_price_gbp": "25111.090000",
+          "invoice_timestamp": "2010-06-17T16:52:00",
+          "customer_id": "17399",
+          "candidate_positive_gbp": "0.000000"
+        }
+      ]
+    },
+    "same_timestamp_invoices": [
+      {
+        "customer_timestamp_groups": 181,
+        "invoices_in_groups": 363
+      }
+    ]
+  }
+}
